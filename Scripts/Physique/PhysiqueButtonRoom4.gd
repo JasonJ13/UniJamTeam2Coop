@@ -4,4 +4,5 @@ extends PhysiqueButton
 
 func press() :
 	play_sound()
+	print(id)
 	pressed.emit(id)

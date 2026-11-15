@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bminucyr82udu"]
+
+[ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/room.gd" id="1_1ky1w"]
+[ext_resource type="Texture2D" uid="uid://x3o05uuhd83m" path="res://Assets/Physique/Room/RoomB.png" id="2_1ky1w"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g4v7s"]
+a = Vector2(962, 103)
+b = Vector2(968, 329)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_57qmd"]
+a = Vector2(127, 655)
+b = Vector2(981, 655)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d0u6y"]
+a = Vector2(975, 658)
+b = Vector2(971, 429)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3gngh"]
+a = Vector2(965, 103)
+b = Vector2(190, 103)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fcnqv"]
+a = Vector2(190, 106)
+b = Vector2(193, 335)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7numd"]
+a = Vector2(193, 417)
+b = Vector2(196, 652)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p1u0y"]
+a = Vector2(193, 341)
+b = Vector2(193, 429)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5s0fj"]
+a = Vector2(965, 332)
+b = Vector2(968, 423)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(100, 100)
+
+[node name="Room" type="Node2D" unique_id=1018444833]
+script = ExtResource("1_1ky1w")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1459927994]
+position = Vector2(579.99994, 381)
+scale = Vector2(7, 7)
+texture = ExtResource("2_1ky1w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1895379271]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1825836972]
+shape = SubResource("SegmentShape2D_g4v7s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=62911536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=608397258]
+shape = SubResource("SegmentShape2D_57qmd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=200938739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1414206731]
+shape = SubResource("SegmentShape2D_d0u6y")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=946055321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1125636379]
+shape = SubResource("SegmentShape2D_3gngh")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=996412906]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=904205319]
+shape = SubResource("SegmentShape2D_fcnqv")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1151118153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=1150265019]
+shape = SubResource("SegmentShape2D_7numd")
+
+[node name="PorteEntree" type="StaticBody2D" parent="." unique_id=1472512313]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PorteEntree" unique_id=510603109]
+shape = SubResource("SegmentShape2D_p1u0y")
+
+[node name="PorteSortie" type="StaticBody2D" parent="." unique_id=1523172327]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PorteSortie" unique_id=1279018490]
+shape = SubResource("SegmentShape2D_5s0fj")
+
+[node name="Entree" type="Area2D" parent="." unique_id=1835958162]
+position = Vector2(130, 370)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entree" unique_id=1746301670]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Sortie" type="Area2D" parent="." unique_id=1645239023]
+position = Vector2(1020, 370)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sortie" unique_id=1594531728]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="ExitSpawn" type="Node2D" parent="." unique_id=800696970]
+position = Vector2(905, 377)
+
+[node name="EntrySpawn" type="Node2D" parent="." unique_id=1059212161]
+position = Vector2(252, 380)
+
+[node name="Middle" type="Node2D" parent="." unique_id=1987679942]
+position = Vector2(580, 387)
+
+[connection signal="body_entered" from="Entree" to="." method="_on_entree_body_entered"]
+[connection signal="body_entered" from="Sortie" to="." method="_on_sortie_body_entered"]

@@ -6,6 +6,7 @@ var times_pressed = 0
 
 
 func press() :
+	play_sound()
 	if countdown.is_stopped() == false:
 		countdown.stop()
 	times_pressed += 1

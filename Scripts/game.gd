@@ -22,6 +22,7 @@ func room_retour() -> void:
 	
 	emplacement -= 1
 	print(emplacement)
+	CheckLightRoom()
 	player.position = rooms[emplacement-1].getExit()
 	camera.position = rooms[emplacement-1].getMiddle()
 
@@ -32,5 +33,13 @@ func room_sorti() -> void:
 	
 	emplacement += 1
 	print(emplacement)
+	CheckLightRoom()
 	player.position = rooms[emplacement-1].getEntry()
 	camera.position = rooms[emplacement-1].getMiddle()
+
+
+func CheckLightRoom() -> void :
+	if isOnDefaultLit == rooms[emplacement-1].DefaultLit :
+		rooms[emplacement-1].allumer()
+	else :
+		rooms[emplacement-1].eteindre()

@@ -3,6 +3,8 @@ class_name SupportRoom
 
 @onready var room : Room = $Room
 
+@onready var torches : Node2D = $Torches
+@export var DefaultLit = true
 
 signal sorti
 signal retour
@@ -20,6 +22,8 @@ func getExit() -> Vector2 :
 func getMiddle() -> Vector2 :
 	return room.middle.position + position
 
+func allumer() -> void :
+	torches.show()
 
-func playerBehing(body: Node2D) -> void:
-	pass # Replace with function body.
+func eteindre() -> void :
+	torches.hide()

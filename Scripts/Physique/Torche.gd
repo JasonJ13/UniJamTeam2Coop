@@ -1,4 +1,5 @@
 extends Node2D
+class_name Torche
 
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
@@ -16,10 +17,10 @@ func _process(delta: float) -> void:
 	
 	var source_level = source.energy
 	
-	if source_level < 0.4 :
+	if source_level < 1.4 :
 		source_level += 0.05
 	
-	elif source_level > 0.6 :
+	elif source_level > 1.6 :
 		source_level -= 0.05
 	
 	else : 

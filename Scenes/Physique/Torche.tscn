@@ -152,4 +152,5 @@ animation = &"sud"
 
 [node name="source" type="PointLight2D" parent="." unique_id=2070177626]
 color = Color(0.6627451, 0.3019608, 0.16078432, 1)
+energy = 2.0
 texture = ExtResource("2_u30so")

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c4vpmm2hwe3j2"]
 
 [ext_resource type="Script" uid="uid://c7mx22u13m6qu" path="res://Scripts/Esprit/RoomSpirit.gd" id="1_63x8c"]
+[ext_resource type="Texture2D" uid="uid://dubbnlgf0trml" path="res://Assets/Esprit/Controls/Change room left.png" id="2_d13pa"]
+[ext_resource type="Texture2D" uid="uid://cm71nqcsg0hqa" path="res://Assets/Esprit/Controls/Change room right.png" id="3_g2w2q"]
 
 [node name="RoomSpirit" type="Control" unique_id=804344434]
 layout_mode = 3
@@ -14,22 +16,38 @@ keys = Array[Vector2]([Vector2(511, 264)])
 metadata/_custom_type_script = "uid://c7mx22u13m6qu"
 
 [node name="Button3" type="Button" parent="." unique_id=1752231662]
-z_index = 2
+z_index = 1
 layout_mode = 0
-offset_left = 10.999999
-offset_top = 201.00002
-offset_right = 19.0
-offset_bottom = 209.00002
-scale = Vector2(20, 24)
+offset_left = 10.0
+offset_top = 229.0
+offset_right = 140.0
+offset_bottom = 359.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Button3" unique_id=240003669]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_d13pa")
 
 [node name="Button" type="Button" parent="." unique_id=371366058]
-z_index = 2
+z_index = 1
 layout_mode = 0
-offset_left = 1031.0
-offset_top = 216.00002
-offset_right = 1039.0
-offset_bottom = 224.00002
-scale = Vector2(15, 17.25)
+offset_left = 1011.0
+offset_top = 236.0
+offset_right = 1141.0
+offset_bottom = 366.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Button" unique_id=1028993379]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.5258789e-05
+offset_right = 450.0
+offset_bottom = 412.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_g2w2q")
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

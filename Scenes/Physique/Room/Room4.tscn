@@ -121,7 +121,7 @@ id = 5
 position = Vector2(576, 523)
 scale = Vector2(2, 2)
 script = ExtResource("4_thnoo")
-id = 5
+id = 4
 
 [node name="PhysiqueButton3" parent="Room/Buttons" unique_id=1379845403 instance=ExtResource("3_vir5s")]
 position = Vector2(194, 526)

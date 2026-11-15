@@ -1,0 +1,143 @@
+[gd_scene format=4 uid="uid://cqvj352keumd2"]
+
+[ext_resource type="Script" uid="uid://ggsw814bxs7h" path="res://Scripts/Physique/Room/room_5supp.gd" id="1_6fah0"]
+[ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="2_dbroa"]
+[ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="3_0hlvs"]
+[ext_resource type="Script" path="res://Scripts/Physique/Room/pitfall.gd" id="3_t1ln5"]
+[ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="4_uce60"]
+[ext_resource type="Texture2D" uid="uid://co4y1he1r2oxd" path="res://Assets/Physique/Circle_Symbol_Room_E.png" id="5_biw8g"]
+[ext_resource type="Texture2D" uid="uid://c5csdsa6hrloh" path="res://Assets/Physique/Triangle_Symbol_Room_E.png" id="6_1fssg"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="14_lae7w"]
+[ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="21_bjql1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0vk"]
+size = Vector2(193, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qj81n"]
+size = Vector2(640, 576)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5etin"]
+size = Vector2(21.269552, 22.88573)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xoo"]
+size = Vector2(128, 96)
+
+[node name="Room5bis" type="Node2D" unique_id=784714343]
+script = ExtResource("1_6fah0")
+metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="Room" type="Node2D" parent="." unique_id=1619369757 node_paths=PackedStringArray("entry", "middle")]
+script = ExtResource("2_dbroa")
+entry = NodePath("Entry")
+middle = NodePath("Middle")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
+
+[node name="Entry" type="Node2D" parent="Room" unique_id=1300614898]
+position = Vector2(577, 586)
+
+[node name="Middle" type="Node2D" parent="Room" unique_id=1779333418]
+position = Vector2(566, 349)
+
+[node name="Entre" type="Area2D" parent="Room" unique_id=1247633720]
+position = Vector2(439, 701)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Entre" unique_id=1918129313]
+position = Vector2(136.5, 15.5)
+shape = SubResource("RectangleShape2D_aa0vk")
+
+[node name="Pitfall" type="Area2D" parent="Room" unique_id=522512855]
+script = ExtResource("3_t1ln5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Pitfall" unique_id=1078847585]
+position = Vector2(576, 192)
+shape = SubResource("RectangleShape2D_qj81n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Room/Pitfall" unique_id=194369316]
+position = Vector2(192, 479.99997)
+scale = Vector2(6.0179925, 8.389506)
+shape = SubResource("RectangleShape2D_5etin")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Room/Pitfall" unique_id=1806951298]
+position = Vector2(704, 528)
+shape = SubResource("RectangleShape2D_o6xoo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Room/Pitfall" unique_id=2024683978]
+position = Vector2(960, 336)
+shape = SubResource("RectangleShape2D_o6xoo")
+
+[node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("3_0hlvs")]
+z_index = 2
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAABAAMAAAAAAAAAAAABAAEAAAAAAAAAAAADAAUAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAEAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAIAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAAFAAcAAAAFAAAAAAADAAcAAAAFAAIAAAA=")
+
+[node name="pillars" parent="." unique_id=1083123632 instance=ExtResource("3_0hlvs")]
+z_index = 2
+tile_map_data = PackedByteArray("AAABAP//AAABAAQAAAABAAAAAAABAAUAAAABAAEAAAABAAYAAAABAAIAAAABAAcAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAHAAEAAAABAAYAAAAHAAIAAAABAAcAAAADAAMAAAABAAQAAAADAAQAAAABAAUAAAADAAUAAAABAAYAAAADAAYAAAABAAcAAAAGAAQAAAABAAQAAAAGAAUAAAABAAUAAAAGAAYAAAABAAYAAAAGAAcAAAABAAcAAAA=")
+
+[node name="door2" parent="." unique_id=514784894 instance=ExtResource("4_uce60")]
+position = Vector2(93, 380)
+rotation = -3.1415925
+scale = Vector2(8, 8)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1638476059]
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+
+[node name="SymboleInLight" type="Node2D" parent="." unique_id=1571092785]
+z_index = 10
+position = Vector2(-139, -263)
+scale = Vector2(8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="SymboleInLight" unique_id=1364633351]
+position = Vector2(60.375, 30.375)
+texture = ExtResource("5_biw8g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SymboleInLight" unique_id=2069079751]
+position = Vector2(144.125, 94.75)
+texture = ExtResource("6_1fssg")
+
+[node name="Torches" type="Node2D" parent="." unique_id=745089674]
+
+[node name="Torche" parent="Torches" unique_id=629756245 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(181, 12)
+side = "nord"
+
+[node name="Torche2" parent="Torches" unique_id=646318596 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(953, -4)
+side = "nord"
+
+[node name="Torche3" parent="Torches" unique_id=1014469784 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(444, 389)
+side = "nord"
+
+[node name="Torche4" parent="Torches" unique_id=1837413450 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(834, 468)
+side = "nord"
+
+[node name="Torche5" parent="Torches" unique_id=993066743 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(-28, 328)
+side = "ouest"
+
+[node name="Torche6" parent="Torches" unique_id=140532189 instance=ExtResource("14_lae7w")]
+z_index = 2
+position = Vector2(1189, 327)
+side = "est"
+
+[node name="Pillar" parent="." unique_id=1283371670 instance=ExtResource("21_bjql1")]
+position = Vector2(450, 592)
+
+[node name="Pillar2" parent="." unique_id=814333498 instance=ExtResource("21_bjql1")]
+position = Vector2(835, 687)
+
+[node name="Pillar3" parent="." unique_id=507864362 instance=ExtResource("21_bjql1")]
+position = Vector2(957, 194)
+
+[node name="Pillar4" parent="." unique_id=2049904826 instance=ExtResource("21_bjql1")]
+position = Vector2(193, 196)
+
+[connection signal="body_entered" from="Room/Entre" to="Room" method="_on_entree_body_entered"]
+[connection signal="EndGame" from="Room/Pitfall" to="." method="_on_pitfall_end_game"]
+[connection signal="body_entered" from="Room/Pitfall" to="Room/Pitfall" method="in_area"]

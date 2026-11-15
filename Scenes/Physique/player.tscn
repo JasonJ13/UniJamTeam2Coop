@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://croetm8tuqfjb" path="res://Scripts/Physique/Player.gd" id="1_1pxl2"]
 [ext_resource type="PackedScene" uid="uid://b5pusxcwl1efh" path="res://Scenes/Physique/Animations.tscn" id="2_1pxl2"]
 [ext_resource type="AudioStream" uid="uid://ufu81nxvypif" path="res://Assets/Son/footstep2.wav" id="3_esq04"]
+[ext_resource type="AudioStream" uid="uid://bm2yr7rwo6d06" path="res://Assets/Son/wind.wav" id="4_g238y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ppwc"]
 radius = 170.10585
@@ -48,6 +49,10 @@ volume_db = 24.0
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1571138064]
 color = Color(0.24985075, 0.24985075, 0.24985075, 1)
 texture = SubResource("GradientTexture2D_g4v7s")
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="." unique_id=474801798]
+stream = ExtResource("4_g238y")
+volume_db = 18.0
 
 [connection signal="StopInteract" from="Body" to="." method="StopInteract"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_zone_detection_body_entered"]

@@ -10,6 +10,7 @@ var interacting := false
 @onready var animationManager : AnimationManager = $Body
 @onready var stepsSound : AudioStreamPlayer2D = $stepsSound
 @onready var timer : Timer = $stepsSound/stepSoundDelay
+@onready var wind : AudioStreamPlayer2D = $Wind
 
 func _physics_process(delta: float) -> void:
 
@@ -53,6 +54,8 @@ func _process(_delta: float) -> void:
 			timer.start(0.5)
 	else:
 		timer.stop()
+	if not wind.playing:
+		wind.play()
 
 
 func _on_step_sound_delay_timeout() -> void:

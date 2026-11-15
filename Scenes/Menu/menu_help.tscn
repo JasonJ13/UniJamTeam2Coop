@@ -18,20 +18,18 @@ position = Vector2(596, 360)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_0mrwn")
 
-[node name="Jouer" type="Button" parent="." unique_id=1966535934]
-layout_mode = 0
-offset_left = 389.0
-offset_top = 205.0
-offset_right = 669.0
-offset_bottom = 305.0
+[node name="Help" type="Button" parent="MainMenu" unique_id=18729641]
+offset_left = -110.0
+offset_top = 40.833313
+offset_right = 20.0
+offset_bottom = 170.83331
 flat = true
 
-[node name="Help" type="Button" parent="." unique_id=18729641]
-layout_mode = 0
-offset_left = 464.0
-offset_top = 409.0
-offset_right = 594.0
-offset_bottom = 539.0
+[node name="Jouer" type="Button" parent="MainMenu" unique_id=1966535934]
+offset_left = -172.5
+offset_top = -129.16667
+offset_right = 107.5
+offset_bottom = -29.166672
 flat = true
 
 [node name="MenuHelp" type="Sprite2D" parent="." unique_id=316082799]
@@ -40,5 +38,5 @@ position = Vector2(593, 360)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_tjbo5")
 
-[connection signal="pressed" from="Jouer" to="." method="jouer"]
-[connection signal="pressed" from="Help" to="." method="Help"]
+[connection signal="pressed" from="MainMenu/Help" to="." method="Help"]
+[connection signal="pressed" from="MainMenu/Jouer" to="." method="jouer"]

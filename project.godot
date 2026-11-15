@@ -13,7 +13,7 @@ config_version=5
 config/name="UTC2"
 run/main_scene="uid://mdo24ev4ku66"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="uid://wditcyol2n8i"
 
 [display]
 

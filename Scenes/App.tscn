@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mdo24ev4ku66"]
 
 [ext_resource type="Script" uid="uid://b1a8thm8el558" path="res://Scripts/SceneManager/App.gd" id="1_pqvxe"]
+[ext_resource type="PackedScene" uid="uid://d1yvbn3wb8x6g" path="res://Scenes/Menu/menu_help.tscn" id="2_r41ji"]
 [ext_resource type="PackedScene" uid="uid://df6fkvfojosd4" path="res://Scenes/Physique/Game.tscn" id="2_tcqga"]
 [ext_resource type="PackedScene" uid="uid://bwe1trpw8qn4k" path="res://Scenes/Menu/MainMenu.tscn" id="3_3anhv"]
 [ext_resource type="PackedScene" uid="uid://blqekonu3cqvx" path="res://Scenes/Esprit/GameSpirit.tscn" id="4_3anhv"]
@@ -8,7 +9,10 @@
 [node name="App" type="Node" unique_id=208798991]
 script = ExtResource("1_pqvxe")
 
-[node name="MainMenu" parent="." unique_id=540462596 instance=ExtResource("3_3anhv")]
+[node name="MainMenu" parent="." unique_id=1953707774 instance=ExtResource("2_r41ji")]
+
+[node name="Selection" parent="." unique_id=540462596 instance=ExtResource("3_3anhv")]
+visible = false
 
 [node name="GameSpirit" parent="." unique_id=1736079434 instance=ExtResource("4_3anhv")]
 visible = false
@@ -16,7 +20,9 @@ visible = false
 [node name="Game" parent="." unique_id=245525862 instance=ExtResource("2_tcqga")]
 visible = false
 
-[connection signal="espritPlay" from="MainMenu" to="." method="play_spirit"]
-[connection signal="physicPlay" from="MainMenu" to="." method="play_physical"]
+[connection signal="play" from="MainMenu" to="." method="select_menu"]
+[connection signal="espritPlay" from="Selection" to="." method="play_spirit"]
+[connection signal="physicPlay" from="Selection" to="." method="play_physical"]
+[connection signal="quit" from="Selection" to="." method="back_menu"]
 [connection signal="quit" from="GameSpirit" to="." method="back_menu"]
 [connection signal="quit" from="Game" to="." method="back_menu"]

@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://k38naj02oiug"]
 
-[ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SupportRoom.gd" id="1_4mt3s"]
+[ext_resource type="Script" uid="uid://cgfpdff44n1sj" path="res://Scripts/Physique/Room/room_4supp.gd" id="1_q7o6e"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="2_q7o6e"]
 [ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Scenes/Physique/PhysiqueButton.tscn" id="3_vir5s"]
 [ext_resource type="Script" uid="uid://bl5siyutk5jfx" path="res://Scripts/Physique/Room/Room4.gd" id="3_ymp55"]
 [ext_resource type="Script" uid="uid://bdrd3cty2t8l6" path="res://Scripts/Physique/hidden_door.gd" id="4_4mt3s"]
 [ext_resource type="AudioStream" uid="uid://p1875ywnwl1x" path="res://Assets/Son/doorOpens.wav" id="4_nkpcj"]
 [ext_resource type="Script" uid="uid://e318xhbn48nh" path="res://Scripts/Physique/PhysiqueButtonRoom4.gd" id="4_thnoo"]
-[ext_resource type="PackedScene" uid="uid://dyseuftnyspkx" path="res://Scenes/Physique/player.tscn" id="8_q7o6e"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="8_q7o6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0p7t"]
 size = Vector2(13.968658, 16.273926)
@@ -28,8 +28,11 @@ size = Vector2(12.256828, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3ki1"]
 size = Vector2(256, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mt3s"]
+size = Vector2(100, 100)
+
 [node name="SupportRoom4" type="Node2D" unique_id=784714343]
-script = ExtResource("1_4mt3s")
+script = ExtResource("1_q7o6e")
 DefaultLit = false
 metadata/_custom_type_script = "uid://bp4qnkxbqalns"
 
@@ -39,8 +42,10 @@ tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAA
 [node name="decor" parent="." unique_id=1057907794 instance=ExtResource("2_q7o6e")]
 tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAA=")
 
-[node name="Room" type="Node2D" parent="." unique_id=874313627]
+[node name="Room" type="Node2D" parent="." unique_id=874313627 node_paths=PackedStringArray("entry", "middle")]
 script = ExtResource("3_ymp55")
+entry = NodePath("Entry")
+middle = NodePath("Center")
 
 [node name="Walls" type="Node2D" parent="Room" unique_id=568903148]
 
@@ -133,12 +138,41 @@ id = 1
 stream = ExtResource("4_nkpcj")
 volume_db = 18.0
 
-[node name="Player" parent="Room" unique_id=663629846 instance=ExtResource("8_q7o6e")]
-position = Vector2(281, 371)
-scale = Vector2(0.25, 0.25)
+[node name="Entree" type="Area2D" parent="Room" unique_id=1540425960]
+position = Vector2(114, 370)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Entree" unique_id=765757121]
+position = Vector2(-77, 14)
+shape = SubResource("RectangleShape2D_4mt3s")
+
+[node name="Entry" type="Node2D" parent="Room" unique_id=488235374]
+position = Vector2(160, 379)
+
+[node name="Center" type="Node2D" parent="Room" unique_id=132878161]
+position = Vector2(391, 366)
+
+[node name="Torches" type="Node2D" parent="." unique_id=1910469254]
+
+[node name="Torche" parent="Torches" unique_id=1524118317 instance=ExtResource("8_q7o6e")]
+position = Vector2(97, 225)
+side = "ouest"
+
+[node name="Torche2" parent="Torches" unique_id=934615994 instance=ExtResource("8_q7o6e")]
+position = Vector2(76, 501)
+side = "ouest"
+
+[node name="Torche3" parent="Torches" unique_id=431450297 instance=ExtResource("8_q7o6e")]
+position = Vector2(687, 186)
+side = "est"
+
+[node name="Torche4" parent="Torches" unique_id=1102273719 instance=ExtResource("8_q7o6e")]
+position = Vector2(683, 520)
+side = "est"
+
+[connection signal="SwitchLights" from="Room" to="." method="emitLight"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton5" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton4" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton3" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton2" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton" to="Room" method="GetButton"]
+[connection signal="body_entered" from="Room/Entree" to="Room" method="_on_entree_body_entered"]

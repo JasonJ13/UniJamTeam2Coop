@@ -43,3 +43,7 @@ func CheckLightRoom() -> void :
 		rooms[emplacement-1].allumer()
 	else :
 		rooms[emplacement-1].eteindre()
+
+
+func switchLight() -> void:
+	isOnDefaultLit = !isOnDefaultLit

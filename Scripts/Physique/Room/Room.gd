@@ -1,9 +1,9 @@
 extends Node2D
 class_name Room
 
-@onready var entry : Node2D = $EntrySpawn
-@onready var exit : Node2D = $ExitSpawn
-@onready var middle : Node2D = $Middle
+@export var entry : Node2D 
+@export var exit : Node2D
+@export var middle : Node2D 
 signal retour
 signal sorti
 
@@ -11,7 +11,7 @@ signal sorti
 @onready var baseTiles : TileMapLayer = $Base
 
 func _ready() -> void:
-	if (showBase) :
+	if (showBase && baseTiles != null) :
 		baseTiles.show()
 
 func _on_entree_body_entered(body: Node2D) -> void:

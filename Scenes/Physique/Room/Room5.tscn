@@ -1,16 +1,60 @@
 [gd_scene format=4 uid="uid://cl6jxna131fy3"]
 
-[ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SupportRoom.gd" id="1_mdjtx"]
+[ext_resource type="Script" uid="uid://ggsw814bxs7h" path="res://Scripts/Physique/Room/room_5supp.gd" id="1_u61ha"]
 [ext_resource type="PackedScene" uid="uid://d3w2uuf2v2wod" path="res://Scenes/Physique/Room/Room.tscn" id="2_irb0r"]
+[ext_resource type="Texture2D" uid="uid://co4y1he1r2oxd" path="res://Assets/Physique/Circle_Symbol_Room_E.png" id="2_u61ha"]
+[ext_resource type="Texture2D" uid="uid://c5csdsa6hrloh" path="res://Assets/Physique/Triangle_Symbol_Room_E.png" id="3_1kgpu"]
 [ext_resource type="Script" uid="uid://b7vkl2e5bfqpq" path="res://Scripts/Physique/Room/Room1.gd" id="3_36hc5"]
+[ext_resource type="Texture2D" uid="uid://xr4406kbmft5" path="res://Assets/Physique/Rhombus_Symbol_Room_E.png" id="4_kho7d"]
 [ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Scenes/Physique/PhysiqueButton.tscn" id="4_u61ha"]
 [ext_resource type="Script" uid="uid://muly5r3qj768" path="res://Scenes/Physique/buttonDoor.gd" id="5_1kgpu"]
+[ext_resource type="Texture2D" uid="uid://bosuth5uvkqnm" path="res://Assets/Physique/Square_Symbol_Room_E.png" id="5_5637h"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="5_kho7d"]
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="6_kho7d"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="7_5637h"]
 
 [node name="Room5" type="Node2D" unique_id=784714343]
-script = ExtResource("1_mdjtx")
+script = ExtResource("1_u61ha")
 metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="SymboleInLight" type="Node2D" parent="." unique_id=1571092785]
+z_index = 10
+position = Vector2(-139, -263)
+scale = Vector2(8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="SymboleInLight" unique_id=1364633351]
+position = Vector2(60.375, 30.375)
+texture = ExtResource("2_u61ha")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SymboleInLight" unique_id=2069079751]
+position = Vector2(144.125, 94.75)
+texture = ExtResource("3_1kgpu")
+
+[node name="SymboleInDark" type="Node2D" parent="." unique_id=1310331365]
+z_index = 10
+position = Vector2(-139, -263)
+scale = Vector2(8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="SymboleInDark" unique_id=741082086]
+position = Vector2(88.125, 89)
+texture = ExtResource("4_kho7d")
+
+[node name="Torche" parent="SymboleInDark/Sprite2D" unique_id=1524118317 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(-15.125, 3.125)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Sprite2D2" type="Sprite2D" parent="SymboleInDark" unique_id=1371151152]
+position = Vector2(162, 36.375)
+texture = ExtResource("5_5637h")
+
+[node name="Torche2" parent="SymboleInDark/Sprite2D2" unique_id=1438029891 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(-25.250011, 6.500004)
+rotation = 3.1415927
+scale = Vector2(0.015, 0.015)
+side = "nord"
 
 [node name="Room" parent="." unique_id=1018444833 instance=ExtResource("2_irb0r")]
 script = ExtResource("3_36hc5")
@@ -23,13 +67,52 @@ script = ExtResource("5_1kgpu")
 position = Vector2(1056.0001, 382)
 scale = Vector2(7, 7)
 
-[node name="Pillar" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
+[node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
 z_index = 2
-tile_map_data = PackedByteArray("AAAGAP//AAABAAAAAAAGAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAEAAcAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAEAP//AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAAGAP//AAABAAAAAAAGAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAEAAcAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAEAP//AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAABAAUAAAAAAAAAAAABAAMAAAAAAAAAAAABAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAUAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAEAAAABAAAAAAADAAIAAAABAAAAAAAEAAEAAAABAAAAAAAFAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAA=")
+
+[node name="pillars" parent="." unique_id=1083123632 instance=ExtResource("7_5637h")]
+z_index = 2
+tile_map_data = PackedByteArray("AAABAP//AAABAAQAAAABAAAAAAABAAUAAAABAAEAAAABAAYAAAABAAIAAAABAAcAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAHAAEAAAABAAYAAAAHAAIAAAABAAcAAAADAAMAAAABAAQAAAADAAQAAAABAAUAAAADAAUAAAABAAYAAAADAAYAAAABAAcAAAAGAAQAAAABAAQAAAAGAAUAAAABAAUAAAAGAAYAAAABAAYAAAAGAAcAAAABAAcAAAA=")
 
 [node name="door2" parent="." unique_id=514784894 instance=ExtResource("6_kho7d")]
 position = Vector2(93, 380)
 rotation = -3.1415925
 scale = Vector2(8, 8)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1638476059]
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+
+[node name="Torches" type="Node2D" parent="." unique_id=745089674]
+
+[node name="Torche" parent="Torches" unique_id=629756245 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(181, 12)
+side = "nord"
+
+[node name="Torche2" parent="Torches" unique_id=646318596 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(953, -4)
+side = "nord"
+
+[node name="Torche3" parent="Torches" unique_id=1014469784 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(444, 389)
+side = "nord"
+
+[node name="Torche4" parent="Torches" unique_id=1837413450 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(834, 468)
+side = "nord"
+
+[node name="Torche5" parent="Torches" unique_id=993066743 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(-28, 328)
+side = "ouest"
+
+[node name="Torche6" parent="Torches" unique_id=140532189 instance=ExtResource("5_kho7d")]
+z_index = 2
+position = Vector2(1189, 327)
+side = "est"
 
 [connection signal="pressed" from="Room/buttonDoor" to="Room" method="OpenDoor"]

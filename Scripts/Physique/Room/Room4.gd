@@ -1,6 +1,7 @@
 extends Room
 
 signal WinTheGame
+signal SwitchLights
 
 var answer_door = [3, 2, 2, 4, 3, 2, 3, 1]
 var answer_game = [1, 2, 4, 1, 3, 4, 2, 1]
@@ -11,8 +12,9 @@ var current_list = 0
 
 var opened = false
 
-@onready var door = $HiddenWall
-@onready var button : PhysiqueButton = $buttonA
+@onready var door : HiddenDoor = $HiddenDoor
+@onready var button : PhysiqueButton = $Buttons/PhysiqueButton
+@onready var soundeffext : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var defaultLit = false
 
@@ -22,16 +24,18 @@ func GetButton(id : int) -> void:
 		current_list = 1
 		index += 1
 		if index == answer_door.size() && opened == false:
-			door.play_sound()
-			door.visible = false
+			door.play_sound_and_delete()
 			opened = true
 	elif id == answer_game[index] && (current_list == 0 || current_list == 2):
 		current_list = 2
 		index += 1
 		if index == answer_game.size():
-			door.play_sound() # à implémenter sur la porte secrète
+			soundeffext.play() # à implémenter sur la porte secrète
 			#shake camera
+			await soundeffext.finished
 			WinTheGame.emit()
+	elif id == 5:
+		SwitchLights.emit()
 	else:
 		index = 0
 		current_list = 0

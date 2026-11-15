@@ -3,6 +3,8 @@ class_name SupportRoom
 
 @onready var room : Room = $Room
 
+@onready var torches : Node2D = $Torches
+@export var DefaultLit = true
 
 signal sorti
 signal retour
@@ -21,7 +23,7 @@ func getMiddle() -> Vector2 :
 	return room.middle.position + position
 
 func allumer() -> void :
-	room.allumer()
+	torches.show()
 
 func eteindre() -> void :
-	room.eteindre()
+	torches.hide()

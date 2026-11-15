@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3mdwsvx3tg1f"]
 
 [ext_resource type="Script" uid="uid://h2e7sfy2xqdo" path="res://Scripts/SceneManager/Selection.gd" id="1_ndk8x"]
+[ext_resource type="Texture2D" uid="uid://jqdnajmpxdok" path="res://Assets/Main_menu/Menu_Select.png" id="2_36alf"]
 
 [node name="Selection" type="Control" unique_id=85010235]
 layout_mode = 3
@@ -11,39 +12,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ndk8x")
 
-[node name="Center" type="Control" parent="." unique_id=563126755]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MenuSelect" type="Sprite2D" parent="." unique_id=1525526172]
+position = Vector2(596, 360)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_36alf")
 
-[node name="Buttons" type="VBoxContainer" parent="Center" unique_id=826585544]
-custom_minimum_size = Vector2(128, 0)
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="PysicalButton" type="Button" parent="Center/Buttons" unique_id=409609909]
+[node name="PysicalButton" type="Button" parent="." unique_id=409609909]
 custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-text = "Physical"
+layout_mode = 0
+offset_left = 406.00003
+offset_top = 211.00002
+offset_right = 546.0
+offset_bottom = 275.0
+scale = Vector2(1.9999987, 1.4157087)
+flat = true
 
-[node name="Separation" type="Control" parent="Center/Buttons" unique_id=1464486144]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
-[node name="SpiritButton" type="Button" parent="Center/Buttons" unique_id=343728066]
+[node name="SpiritButton" type="Button" parent="." unique_id=343728066]
 custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-text = "Spirit"
+layout_mode = 0
+offset_left = 461.99997
+offset_top = 421.0
+offset_right = 590.0
+offset_bottom = 485.0
+scale = Vector2(1.5294267, 1.4326428)
+flat = true
 
-[connection signal="pressed" from="Center/Buttons/PysicalButton" to="." method="pysique"]
-[connection signal="pressed" from="Center/Buttons/SpiritButton" to="." method="esprit"]
+[connection signal="pressed" from="PysicalButton" to="." method="pysique"]
+[connection signal="pressed" from="SpiritButton" to="." method="esprit"]

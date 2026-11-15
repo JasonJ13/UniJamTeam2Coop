@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://cl6jxna131fy3"]
+
+[ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SupportRoom.gd" id="1_mdjtx"]
+[ext_resource type="PackedScene" uid="uid://d3w2uuf2v2wod" path="res://Scenes/Physique/Room/Room.tscn" id="2_irb0r"]
+[ext_resource type="Script" uid="uid://b7vkl2e5bfqpq" path="res://Scripts/Physique/Room/Room1.gd" id="3_36hc5"]
+[ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Scenes/Physique/PhysiqueButton.tscn" id="4_u61ha"]
+[ext_resource type="Script" uid="uid://muly5r3qj768" path="res://Scenes/Physique/buttonDoor.gd" id="5_1kgpu"]
+[ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="6_kho7d"]
+[ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="7_5637h"]
+[ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="8_webx4"]
+
+[node name="Room5" type="Node2D" unique_id=784714343]
+script = ExtResource("1_mdjtx")
+metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="Room" parent="." unique_id=1018444833 instance=ExtResource("2_irb0r")]
+script = ExtResource("3_36hc5")
+
+[node name="buttonDoor" parent="Room" unique_id=1878903987 instance=ExtResource("4_u61ha")]
+position = Vector2(1055, 379)
+script = ExtResource("5_1kgpu")
+
+[node name="door" parent="Room" unique_id=1118860039 instance=ExtResource("6_kho7d")]
+position = Vector2(1056.0001, 382)
+scale = Vector2(7, 7)
+
+[node name="Pillar" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
+z_index = 2
+tile_map_data = PackedByteArray("AAAGAP//AAABAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAEAAcAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAEAP//AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAA=")
+
+[node name="door2" parent="." unique_id=514784894 instance=ExtResource("6_kho7d")]
+position = Vector2(93, 380)
+rotation = -3.1415925
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D" parent="." unique_id=1283371670 instance=ExtResource("8_webx4")]
+position = Vector2(833, 207)
+
+[connection signal="pressed" from="Room/buttonDoor" to="Room" method="OpenDoor"]

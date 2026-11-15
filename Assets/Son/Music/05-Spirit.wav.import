@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://2ay416blc2k6"
-path="res://.godot/imported/puzzle.wav-5b4f675e7d41abaadce54f6ba0e24855.sample"
+uid="uid://tivl4kb26vka"
+path="res://.godot/imported/05-Spirit.wav-c400f10f3733c95b77348ea1d8fd30c5.sample"
 
 [deps]
 
-source_file="res://Assets/Son/Music/puzzle.wav"
-dest_files=["res://.godot/imported/puzzle.wav-5b4f675e7d41abaadce54f6ba0e24855.sample"]
+source_file="res://Assets/Son/Music/05-Spirit.wav"
+dest_files=["res://.godot/imported/05-Spirit.wav-c400f10f3733c95b77348ea1d8fd30c5.sample"]
 
 [params]
 

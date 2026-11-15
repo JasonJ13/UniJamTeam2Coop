@@ -10,3 +10,7 @@ func eteindre() -> void :
 	torches.hide()
 	$SymboleInLight.hide()
 	$SymboleInDark.show()
+
+
+func _on_pitfall_end_game() -> void:
+	pass # Go to end game screen

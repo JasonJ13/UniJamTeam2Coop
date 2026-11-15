@@ -2,7 +2,7 @@ extends Control
 
 @export var rooms : Array[RoomSpirit] = []
 @export var room5 : Room5 = null
-
+signal quit
 
 var indice=0
 
@@ -34,6 +34,8 @@ func _process(delta: float) -> void:
 			$EndRoom.visible=true
 	if (room5.all_placed()):
 		$Room5/Square/reveal.visible=true
+	if Input.is_action_pressed("Menu"):
+		quit.emit()
 func move_to_prev():
 	if (indice==4):
 		rooms[indice].visible=false

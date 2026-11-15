@@ -1,6 +1,7 @@
 extends Node2D
 class_name Game
 
+signal quit
 var emplacement = 1
 
 @onready var player : Node2D = $Player
@@ -15,6 +16,10 @@ func _ready() -> void:
 	for room in rooms :
 		room.retour.connect(room_retour)
 		room.sorti.connect(room_sorti)
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("Menu"):
+		quit.emit()
 
 func room_retour() -> void:
 	if emplacement == 1 :

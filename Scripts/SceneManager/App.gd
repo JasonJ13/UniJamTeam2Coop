@@ -11,3 +11,8 @@ func play_physical() :
 func play_spirit() : 
 	spirit.show()
 	menu.hide()
+
+func back_menu() :
+	spirit.hide()
+	physical.hide()
+	menu.show()

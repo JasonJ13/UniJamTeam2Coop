@@ -18,3 +18,5 @@ visible = false
 
 [connection signal="espritPlay" from="MainMenu" to="." method="play_spirit"]
 [connection signal="physicPlay" from="MainMenu" to="." method="play_physical"]
+[connection signal="quit" from="GameSpirit" to="." method="back_menu"]
+[connection signal="quit" from="Game" to="." method="back_menu"]

@@ -31,20 +31,24 @@ size = Vector2(256, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mt3s"]
 size = Vector2(100, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7o6e"]
+size = Vector2(254, 100)
+
 [node name="SupportRoom4" type="Node2D" unique_id=784714343]
 script = ExtResource("1_q7o6e")
 DefaultLit = false
 metadata/_custom_type_script = "uid://bp4qnkxbqalns"
 
 [node name="Base" parent="." unique_id=1083123632 instance=ExtResource("2_q7o6e")]
-tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAAEAAUAAAABAAAAAAAAAAUAAAAIAAAAAAAAAAMAAAAFAAQAAAAAAAQAAAAFAAUAAAABAAQAAAABAAAAAAABAAMAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAADAAEAAAABAAEAAAAHAAEAAAADAAEAAAAHAAEAAAACAAEAAAAGAAEAAAAEAAEAAAAGAAEAAAAFAAIAAAAEAAIAAAAFAAEAAAACAAMAAAAFAAMAAAAFAAIAAAAFAAQAAAAEAAIAAAAFAAUAAAAJAAIAAAAEAAAAAAAGAAAAAAAFAAAAAAACAAIAAAACAAAAAAAGAAAAAAADAAAAAAAHAAAAAAABAAAAAAAHAAAAAAAAAAAAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAAEAAUAAAABAAAAAAAAAAUAAAAIAAAAAAAAAAMAAAAFAAQAAAAAAAQAAAAFAAUAAAABAAQAAAABAAAAAAABAAMAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAADAAEAAAABAAEAAAAHAAEAAAAEAAEAAAAGAAEAAAAFAAIAAAAEAAIAAAAFAAEAAAACAAMAAAAFAAMAAAAFAAIAAAAFAAQAAAAEAAIAAAAFAAUAAAAJAAIAAAAEAAAAAAAGAAAAAAAFAAAAAAACAAIAAAABAAAAAAAHAAAAAAAAAAAAAAADAAAAAAA=")
 
 [node name="decor" parent="." unique_id=1057907794 instance=ExtResource("2_q7o6e")]
 tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAA=")
 
-[node name="Room" type="Node2D" parent="." unique_id=874313627 node_paths=PackedStringArray("entry", "middle")]
+[node name="Room" type="Node2D" parent="." unique_id=874313627 node_paths=PackedStringArray("entry", "exit", "middle")]
 script = ExtResource("3_ymp55")
 entry = NodePath("Entry")
+exit = NodePath("Exit")
 middle = NodePath("Center")
 
 [node name="Walls" type="Node2D" parent="Room" unique_id=568903148]
@@ -93,6 +97,9 @@ shape = SubResource("RectangleShape2D_aa0vk")
 
 [node name="HiddenDoor" type="StaticBody2D" parent="Room" unique_id=1929810540]
 script = ExtResource("4_4mt3s")
+
+[node name="murAsset" parent="Room/HiddenDoor" unique_id=1610898505 instance=ExtResource("2_q7o6e")]
+tile_map_data = PackedByteArray("AAACAAAAAAAGAAAAAAACAAEAAAAGAAEAAAADAAAAAAAHAAAAAAADAAEAAAAHAAEAAAA=")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/HiddenDoor" unique_id=1154072826]
 position = Vector2(385, 172)
@@ -150,6 +157,16 @@ position = Vector2(160, 379)
 
 [node name="Center" type="Node2D" parent="Room" unique_id=132878161]
 position = Vector2(391, 366)
+
+[node name="Exit" type="Node2D" parent="Room" unique_id=626933522]
+position = Vector2(380, 224)
+
+[node name="Sortie" type="Area2D" parent="Room" unique_id=1321348645]
+position = Vector2(252, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Sortie" unique_id=541576830]
+position = Vector2(133, 17)
+shape = SubResource("RectangleShape2D_q7o6e")
 
 [node name="Torches" type="Node2D" parent="." unique_id=1910469254]
 

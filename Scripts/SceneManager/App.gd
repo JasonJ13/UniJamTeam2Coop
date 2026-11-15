@@ -4,6 +4,7 @@ extends Node
 @onready var spirit : Control = $GameSpirit
 @onready var menu : Control = $Selection
 @onready var main_menu : Control = $MainMenu
+@onready var title_screen : Control = $"Title screen"
 
 
 func play_physical() :
@@ -18,8 +19,13 @@ func back_menu() :
 	spirit.hide()
 	physical.hide()
 	menu.hide()
-	main_menu.show()
+	main_menu.hide()
+	title_screen.show()
 
 func select_menu():
 	main_menu.hide()
 	menu.show()
+
+func go_to_main_menu():
+	title_screen.hide()
+	main_menu.show()

@@ -16,20 +16,21 @@ metadata/_custom_type_script = "uid://djpf74e6r58bs"
 [node name="Room1" parent="." unique_id=744245850 instance=ExtResource("2_xbb3c")]
 
 [node name="Room2" parent="." unique_id=1518577394 instance=ExtResource("3_5stio")]
-position = Vector2(1348, 17)
+position = Vector2(1384, -930)
 
 [node name="Room3" parent="." unique_id=1612407685 instance=ExtResource("4_cao1l")]
-position = Vector2(2700, 0)
+position = Vector2(2493, 935)
 
 [node name="Room4" parent="." unique_id=784714343 instance=ExtResource("5_p88y0")]
-position = Vector2(4208, -18)
+position = Vector2(4475, -1320)
 
 [node name="Room5" parent="." unique_id=1309308397 instance=ExtResource("6_jgems")]
-position = Vector2(5230, 77)
+position = Vector2(5890, 820)
+DefaultLit = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1326329655]
 position = Vector2(583, 384)
-zoom = Vector2(1.01, 0.98)
+zoom = Vector2(0.673, 0.653)
 
 [node name="Player" parent="." unique_id=663629846 instance=ExtResource("3_53bud")]
 z_index = 6

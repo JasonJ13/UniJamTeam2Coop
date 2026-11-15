@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://p1875ywnwl1x" path="res://Assets/Son/doorOpens.wav" id="4_nkpcj"]
 [ext_resource type="Script" uid="uid://e318xhbn48nh" path="res://Scripts/Physique/PhysiqueButtonRoom4.gd" id="4_thnoo"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="8_q7o6e"]
+[ext_resource type="Texture2D" uid="uid://c8kupf6ufrs5n" path="res://Assets/Physique/Alpha.png" id="9_ggwc3"]
+[ext_resource type="Texture2D" uid="uid://6h471juhjqfu" path="res://Assets/Physique/Beta.png" id="10_5onpo"]
+[ext_resource type="Texture2D" uid="uid://bmov46qay5fx0" path="res://Assets/Physique/Gamma.png" id="11_f1ewf"]
+[ext_resource type="Texture2D" uid="uid://dvi5jhyw653hu" path="res://Assets/Physique/Delta.png" id="12_urf8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0p7t"]
 size = Vector2(13.968658, 16.273926)
@@ -43,7 +47,7 @@ metadata/_custom_type_script = "uid://bp4qnkxbqalns"
 tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAAEAAUAAAABAAAAAAAAAAUAAAAIAAAAAAAAAAMAAAAFAAQAAAAAAAQAAAAFAAUAAAABAAQAAAABAAAAAAABAAMAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAADAAEAAAABAAEAAAAHAAEAAAAEAAEAAAAGAAEAAAAFAAIAAAAEAAIAAAAFAAEAAAACAAMAAAAFAAMAAAAFAAIAAAAFAAQAAAAEAAIAAAAFAAUAAAAJAAIAAAAEAAAAAAAGAAAAAAAFAAAAAAACAAIAAAABAAAAAAAHAAAAAAAAAAAAAAADAAAAAAA=")
 
 [node name="decor" parent="." unique_id=1057907794 instance=ExtResource("2_q7o6e")]
-tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAABAAYAAAAAAAgAAAACAAYAAAABAAgAAAADAAYAAAACAAgAAAAEAAYAAAADAAgAAAA=")
 
 [node name="Room" type="Node2D" parent="." unique_id=874313627 node_paths=PackedStringArray("entry", "exit", "middle")]
 script = ExtResource("3_ymp55")
@@ -162,7 +166,7 @@ position = Vector2(391, 366)
 position = Vector2(380, 224)
 
 [node name="Sortie" type="Area2D" parent="Room" unique_id=1321348645]
-position = Vector2(252, 80)
+position = Vector2(257, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Sortie" unique_id=541576830]
 position = Vector2(133, 17)
@@ -186,6 +190,26 @@ side = "est"
 position = Vector2(683, 520)
 side = "est"
 
+[node name="Alpha" type="Sprite2D" parent="." unique_id=1857435610]
+position = Vector2(226, 245)
+scale = Vector2(8, 8)
+texture = ExtResource("9_ggwc3")
+
+[node name="Beta" type="Sprite2D" parent="." unique_id=648075169]
+position = Vector2(547, 260)
+scale = Vector2(8, 8)
+texture = ExtResource("10_5onpo")
+
+[node name="Gamma" type="Sprite2D" parent="." unique_id=1119310493]
+position = Vector2(195, 377)
+scale = Vector2(8, 8)
+texture = ExtResource("11_f1ewf")
+
+[node name="Delta" type="Sprite2D" parent="." unique_id=750731179]
+position = Vector2(671, 361)
+scale = Vector2(8, 8)
+texture = ExtResource("12_urf8y")
+
 [connection signal="SwitchLights" from="Room" to="." method="emitLight"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton5" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton4" to="Room" method="GetButton"]
@@ -193,3 +217,4 @@ side = "est"
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton2" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton" to="Room" method="GetButton"]
 [connection signal="body_entered" from="Room/Entree" to="Room" method="_on_entree_body_entered"]
+[connection signal="body_entered" from="Room/Sortie" to="Room" method="_on_sortie_body_entered"]

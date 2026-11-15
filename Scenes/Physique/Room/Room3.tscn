@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="2_gk0r5"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="2_xr5d2"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="5_0w3xs"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="6_mbsnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk0r5"]
 size = Vector2(100, 100)
@@ -103,6 +104,10 @@ side = "est"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=551761241]
 position = Vector2(417, 773)
 shape = SubResource("SegmentShape2D_g4v7s")
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1057926650]
+position = Vector2(1, 0)
+stream = ExtResource("6_mbsnw")
 
 [connection signal="body_entered" from="Room/Entree" to="Room" method="_on_entree_body_entered"]
 [connection signal="body_entered" from="Room/Sortie" to="Room" method="_on_sortie_body_entered"]

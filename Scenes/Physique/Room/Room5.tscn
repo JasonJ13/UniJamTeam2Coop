@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="6_kho7d"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="7_5637h"]
 [ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="9_irb0r"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="10_1kgpu"]
 
 [node name="Room5" type="Node2D" unique_id=784714343]
 script = ExtResource("1_u61ha")
@@ -112,3 +113,6 @@ position = Vector2(564, 719)
 
 [node name="Middle" type="Node2D" parent="Room" unique_id=1779333418]
 position = Vector2(566, 349)
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1468411359]
+stream = ExtResource("10_1kgpu")

@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://p1875ywnwl1x" path="res://Assets/Son/doorOpens.wav" id="4_nkpcj"]
 [ext_resource type="Script" uid="uid://e318xhbn48nh" path="res://Scripts/Physique/PhysiqueButtonRoom4.gd" id="4_thnoo"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="8_q7o6e"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="10_8eove"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0p7t"]
 size = Vector2(13.968658, 16.273926)
@@ -185,6 +186,9 @@ side = "est"
 [node name="Torche4" parent="Torches" unique_id=1102273719 instance=ExtResource("8_q7o6e")]
 position = Vector2(683, 520)
 side = "est"
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1785461488]
+stream = ExtResource("10_8eove")
 
 [connection signal="SwitchLights" from="Room" to="." method="emitLight"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton5" to="Room" method="GetButton"]

@@ -1,6 +1,7 @@
 extends SupportRoom
 
 
+
 signal SwitchLight
 func emitLight() -> void:
 	SwitchLight.emit()

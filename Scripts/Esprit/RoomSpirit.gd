@@ -10,7 +10,7 @@ signal next()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(len(keys)):
+	for i in range(len(pieces)):
 		pieces[i].pos_key=keys[i]
 		placed.append(false)
 		
@@ -18,7 +18,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	for i in range(len(keys)):
+	for i in range(len(pieces)):
 		if pieces[i].is_placed():
 			placed[i]=true
 		else:
@@ -35,6 +35,9 @@ func hide_prev_button():
 
 func show_next_button():
 	$Button.visible=true
+
+func hide_next_button():
+	$Button.visible=false
 
 
 func _on_button_pressed() -> void:

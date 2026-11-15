@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bem444tuqmrpl" path="res://Scripts/Physique/PhysiqueButtonRoom2.gd" id="7_x1sat"]
 [ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="8_nmxnj"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="8_s1xa5"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="9_nmxnj"]
 
 [node name="Room2" type="Node2D" unique_id=1518577394]
 script = ExtResource("1_1q34m")
@@ -42,6 +43,23 @@ position = Vector2(323, 396)
 
 [node name="Pillar" parent="Pillars" unique_id=554011806 instance=ExtResource("8_nmxnj")]
 position = Vector2(706, 494)
+
+[node name="Torches" type="Node2D" parent="." unique_id=2110739139]
+
+[node name="Torche" parent="Torches" unique_id=1524118317 instance=ExtResource("9_nmxnj")]
+position = Vector2(446, 13)
+side = "nord"
+
+[node name="Torche2" parent="Torches" unique_id=2008601843 instance=ExtResource("9_nmxnj")]
+position = Vector2(827, 562)
+side = "sud"
+
+[node name="Torche3" parent="Torches" unique_id=1143355776 instance=ExtResource("9_nmxnj")]
+position = Vector2(374, 278)
+side = "ouest"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=961346946]
+color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 
 [connection signal="pressed" from="Room/PhysiqueButton" to="Room" method="GetButton"]
 [connection signal="timeout" from="Room/PhysiqueButton/Timer" to="Room/PhysiqueButton" method="_on_timeout"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cbv10dylpcuvn"]
+
+[ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="1_gde5b"]
+
+[node name="Newscene" type="Node2D" unique_id=649681665]
+script = ExtResource("1_gde5b")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"

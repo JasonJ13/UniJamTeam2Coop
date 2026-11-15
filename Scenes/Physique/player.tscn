@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://croetm8tuqfjb" path="res://Scripts/Physique/Player.gd" id="1_1pxl2"]
 [ext_resource type="PackedScene" uid="uid://b5pusxcwl1efh" path="res://Scenes/Physique/Animations.tscn" id="2_1pxl2"]
+[ext_resource type="AudioStream" uid="uid://ufu81nxvypif" path="res://Assets/Son/footstep2.wav" id="3_esq04"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ppwc"]
 radius = 170.10585
@@ -27,6 +28,13 @@ position = Vector2(2, 72)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_qox5h")
 
+[node name="stepsSound" type="AudioStreamPlayer2D" parent="." unique_id=518368370]
+stream = ExtResource("3_esq04")
+volume_db = 24.0
+
+[node name="stepSoundDelay" type="Timer" parent="stepsSound" unique_id=598518641]
+
 [connection signal="StopInteract" from="Body" to="." method="StopInteract"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_zone_detection_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_zone_detection_body_exited"]
+[connection signal="timeout" from="stepsSound/stepSoundDelay" to="." method="_on_step_sound_delay_timeout"]

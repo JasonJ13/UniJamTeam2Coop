@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyeu05wyp38gb" path="res://Scripts/Physique/PhysiqueButton.gd" id="1_1ifiq"]
 [ext_resource type="Texture2D" uid="uid://deyhjglgynokm" path="res://Assets/Physique/Button.png" id="1_dg2il"]
+[ext_resource type="AudioStream" uid="uid://r5jgionjdpgo" path="res://Assets/Son/button.wav" id="3_6x5x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(32, 32)
@@ -17,3 +18,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 position = Vector2(4.2915344e-06, 4.7683716e-07)
 scale = Vector2(8, 8)
 texture = ExtResource("1_dg2il")
+
+[node name="buttonClick" type="AudioStreamPlayer2D" parent="." unique_id=797244166]
+stream = ExtResource("3_6x5x2")
+volume_db = 18.0

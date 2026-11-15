@@ -10,7 +10,6 @@ var opened = false
 
 func OpenDoor(_id : int) -> void:
 	if not opened:
-		door.play_sound()
-		door.visible = false
+		door.play_sound_and_delete()
 		buttonDoor.queue_free()
 		opened = true

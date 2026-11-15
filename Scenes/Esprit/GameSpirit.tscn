@@ -6,10 +6,43 @@
 [ext_resource type="Texture2D" uid="uid://b2onp7e1qovco" path="res://Assets/Esprit/Pillars/White_Pillar_Top.png" id="4_3ahv2"]
 [ext_resource type="Script" uid="uid://dq8d15t07mjj" path="res://Scripts/Esprit/Piece.gd" id="5_3ahv2"]
 [ext_resource type="Texture2D" uid="uid://i76a5i82rd2h" path="res://Assets/Esprit/Maps/Map_2.png" id="6_tldpl"]
+[ext_resource type="Texture2D" uid="uid://cn6kdxanxcdbt" path="res://Assets/Esprit/Pillars/X_Pillar_Top_with_info_revealed.png" id="8_8wgek"]
 [ext_resource type="Texture2D" uid="uid://d1dd4cmxnbjne" path="res://Assets/Esprit/Pillars/X_Pillar_Top.png" id="8_fhdtl"]
 [ext_resource type="Texture2D" uid="uid://ce5xacky5r3rb" path="res://Assets/Esprit/Pillars/Diamond_Pillar_Top.png" id="9_8ol5l"]
 [ext_resource type="Texture2D" uid="uid://b4skgf5lmasfl" path="res://Assets/Esprit/Maps/Map_3.png" id="10_8ol5l"]
-[ext_resource type="Texture2D" uid="uid://da2oknrwtqijd" path="res://Assets/Esprit/Maps/Map_4.png" id="11_w5e7p"]
+[ext_resource type="Texture2D" uid="uid://cjx8ox10y1f75" path="res://Assets/Esprit/Pillars/Diamond_Pillar_Top_with_info_revealed.png" id="10_38xxe"]
+[ext_resource type="Texture2D" uid="uid://dt3xd2vtp550n" path="res://Assets/Esprit/Pillars/T_Pillar_Top.png" id="11_cuxuf"]
+[ext_resource type="Texture2D" uid="uid://cmitc4nd1e1lt" path="res://Assets/Esprit/Maps/Map_4.png" id="11_w5e7p"]
+[ext_resource type="PackedScene" uid="uid://21myfky7ifbo" path="res://Scenes/Esprit/Room5.tscn" id="12_km8cv"]
+[ext_resource type="Texture2D" uid="uid://drxf4gf1f0mg8" path="res://Assets/Esprit/Pillars/T_Pillar_Top_with_info_revealed.png" id="12_twiwv"]
+[ext_resource type="Script" uid="uid://bk7qvwldl5a7v" path="res://Scripts/Esprit/Room5.gd" id="13_fgjyx"]
+[ext_resource type="Texture2D" uid="uid://brqonfviibufl" path="res://Assets/Esprit/Maps/map_5.png" id="14_043if"]
+[ext_resource type="Texture2D" uid="uid://bvn8uw3foa00m" path="res://Assets/Esprit/Pillars/Semi_Circle_Pillar.png" id="15_abhwm"]
+[ext_resource type="Texture2D" uid="uid://bpc1eg4n688h4" path="res://Assets/Esprit/Pillars/Rhombus_Pillar.png" id="16_8wgek"]
+[ext_resource type="Texture2D" uid="uid://b6yqi1fprkf7w" path="res://Assets/Esprit/Pillars/Triangle_Pillar.png" id="17_8wlue"]
+[ext_resource type="Texture2D" uid="uid://drrnyq2arfrxv" path="res://Assets/Esprit/Pillars/Square_Pillar.png" id="18_38xxe"]
+[ext_resource type="Texture2D" uid="uid://m6vouc5imojr" path="res://Assets/Esprit/Pillars/Square_Pillar_with_info_revealed.png" id="22_twiwv"]
+[ext_resource type="Texture2D" uid="uid://b64we45vuc2h0" path="res://Assets/Esprit/Maps/Map_6.png" id="23_k3e2r"]
+[ext_resource type="Texture2D" uid="uid://dncrdlsc28t4t" path="res://Assets/Esprit/Rune/Rune_H.png" id="23_upt55"]
+[ext_resource type="Texture2D" uid="uid://hgo1vuaepuq8" path="res://Assets/Esprit/Rune/Rune_K.png" id="24_ajqfe"]
+[ext_resource type="Texture2D" uid="uid://dndop8yvwukmw" path="res://Assets/Esprit/Ecran_fin.png" id="24_upt55"]
+[ext_resource type="Texture2D" uid="uid://b2lads5ndabfr" path="res://Assets/Esprit/Rune/Rune_C.png" id="26_lpqyh"]
+[ext_resource type="Texture2D" uid="uid://dyipkadrywda1" path="res://Assets/Esprit/Rune/rune_E.png" id="26_y0muh"]
+[ext_resource type="Texture2D" uid="uid://vgehkhlwnddj" path="res://Assets/Esprit/Rune/Rune_B.png" id="28_35y2i"]
+[ext_resource type="Texture2D" uid="uid://cfij16ahgq5m1" path="res://Assets/Esprit/Rune/Rune_A.png" id="29_0wo5a"]
+[ext_resource type="Texture2D" uid="uid://crmsvebru7pek" path="res://Assets/Esprit/Rune/Rune_I.png" id="30_oh1qg"]
+[ext_resource type="Texture2D" uid="uid://db4e1lj3adpjc" path="res://Assets/Esprit/Rune/Rune_F.png" id="31_57l5b"]
+[ext_resource type="Texture2D" uid="uid://cme67sn522o63" path="res://Assets/Esprit/Rune/Rune_L.png" id="32_mhqu7"]
+[ext_resource type="Texture2D" uid="uid://dhnmuhiogroir" path="res://Assets/Esprit/Rune/Rune_D.png" id="33_14brf"]
+[ext_resource type="Texture2D" uid="uid://b4twm0wq85wpw" path="res://Assets/Esprit/Rune/Rune_G.png" id="34_cwym3"]
+[ext_resource type="Texture2D" uid="uid://c3s7ue48bg6ey" path="res://Assets/Esprit/Rune/Rune_J.png" id="35_mhkcb"]
+
+[sub_resource type="Gradient" id="Gradient_c0dwe"]
+offsets = PackedFloat32Array(0.006024096, 0.43975905, 0.48795182, 1)
+colors = PackedColorArray(0.24096386, 0.24096386, 0.24096386, 1, 0.43975905, 0.43975905, 0.43975905, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jyycw"]
+gradient = SubResource("Gradient_c0dwe")
 
 [sub_resource type="Gradient" id="Gradient_w5e7p"]
 
@@ -18,7 +51,7 @@ gradient = SubResource("Gradient_w5e7p")
 fill_from = Vector2(1, 1)
 fill_to = Vector2(1, 1)
 
-[node name="GameSpirit" type="Control" unique_id=1736079434 node_paths=PackedStringArray("rooms")]
+[node name="GameSpirit" type="Control" unique_id=1736079434 node_paths=PackedStringArray("rooms", "room5")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +59,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3utc4")
-rooms = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("Room4")]
+rooms = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("Room4"), NodePath("Room6")]
+room5 = NodePath("Room5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1940475652]
+visible = false
+position = Vector2(488, 269)
+scale = Vector2(6826.9907, 1018.93976)
+texture = SubResource("GradientTexture1D_jyycw")
 
 [node name="Room1" parent="." unique_id=522636664 node_paths=PackedStringArray("pieces") instance=ExtResource("2_3ahv2")]
 visible = false
@@ -40,6 +80,7 @@ scale = Vector2(0.79999995, 0.79999995)
 texture = ExtResource("3_ppguh")
 
 [node name="White_Pillar" type="Button" parent="Room1" unique_id=727971869]
+z_index = 2
 layout_mode = 0
 offset_left = 341.0
 offset_top = 478.0
@@ -77,6 +118,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("6_tldpl")
 
 [node name="X" type="Button" parent="Room2" unique_id=1560612433]
+z_index = 2
 layout_mode = 0
 offset_left = 212.0
 offset_top = 188.0
@@ -86,14 +128,23 @@ flat = true
 script = ExtResource("5_3ahv2")
 metadata/_custom_type_script = "uid://dq8d15t07mjj"
 
-[node name="TextureRect" type="TextureRect" parent="Room2/X" unique_id=1950855557]
+[node name="no_reveal" type="TextureRect" parent="Room2/X" unique_id=1950855557]
 layout_mode = 0
 offset_right = 767.0
 offset_bottom = 776.0
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("8_fhdtl")
 
+[node name="reveal" type="TextureRect" parent="Room2/X" unique_id=1661364075]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("8_8wgek")
+
 [node name="D" type="Button" parent="Room2" unique_id=780075951]
+z_index = 2
 layout_mode = 0
 offset_left = 331.0
 offset_top = 378.0
@@ -103,14 +154,23 @@ flat = true
 script = ExtResource("5_3ahv2")
 metadata/_custom_type_script = "uid://dq8d15t07mjj"
 
-[node name="TextureRect" type="TextureRect" parent="Room2/D" unique_id=111133853]
+[node name="no_reveal" type="TextureRect" parent="Room2/D" unique_id=111133853]
 layout_mode = 0
 offset_right = 767.0
 offset_bottom = 776.0
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("9_8ol5l")
 
+[node name="reveal" type="TextureRect" parent="Room2/D" unique_id=416872342]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("10_38xxe")
+
 [node name="T" type="Button" parent="Room2" unique_id=1239340210]
+z_index = 2
 layout_mode = 0
 offset_left = 633.0
 offset_top = 183.0
@@ -120,11 +180,20 @@ flat = true
 script = ExtResource("5_3ahv2")
 metadata/_custom_type_script = "uid://dq8d15t07mjj"
 
-[node name="TextureRect" type="TextureRect" parent="Room2/T" unique_id=1763598579]
+[node name="no_reveal" type="TextureRect" parent="Room2/T" unique_id=1763598579]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.13, 0.13)
+texture = ExtResource("11_cuxuf")
+
+[node name="reveal" type="TextureRect" parent="Room2/T" unique_id=702290968]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("12_twiwv")
 
 [node name="Room3" parent="." unique_id=1809866431 node_paths=PackedStringArray("pieces") instance=ExtResource("2_3ahv2")]
 visible = false
@@ -147,6 +216,7 @@ script = ExtResource("5_3ahv2")
 metadata/_custom_type_script = "uid://dq8d15t07mjj"
 
 [node name="Room4" parent="." unique_id=1936581324 node_paths=PackedStringArray("pieces") instance=ExtResource("2_3ahv2")]
+visible = false
 layout_mode = 1
 pieces = [NodePath("EasterEgg")]
 keys = Array[Vector2]([Vector2(511, 273)])
@@ -166,3 +236,331 @@ icon = SubResource("GradientTexture2D_riqys")
 flat = true
 script = ExtResource("5_3ahv2")
 metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="Room5" parent="." unique_id=1121321171 node_paths=PackedStringArray("pieces") instance=ExtResource("12_km8cv")]
+layout_mode = 1
+script = ExtResource("13_fgjyx")
+pieces = [NodePath("Semi_Circle"), NodePath("Rhombus"), NodePath("Square"), NodePath("Triangle")]
+keys = Array[Vector2]([Vector2(700, 209), Vector2(342, 200), Vector2(709, 386), Vector2(414, 455)])
+
+[node name="Map5" type="Sprite2D" parent="Room5" unique_id=396958075]
+position = Vector2(574, 297)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("14_043if")
+
+[node name="Semi_Circle" type="Button" parent="Room5" unique_id=2118729033]
+z_index = 2
+layout_mode = 0
+offset_left = 453.0
+offset_top = 239.0
+offset_right = 523.0
+offset_bottom = 309.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room5/Semi_Circle" unique_id=939953329]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("15_abhwm")
+
+[node name="Rhombus" type="Button" parent="Room5" unique_id=1581599219]
+z_index = 2
+layout_mode = 0
+offset_left = 303.0
+offset_top = 293.0
+offset_right = 373.0
+offset_bottom = 363.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room5/Rhombus" unique_id=1347513917]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("16_8wgek")
+
+[node name="Triangle" type="Button" parent="Room5" unique_id=716879087]
+z_index = 2
+layout_mode = 0
+offset_left = 610.0
+offset_top = 467.0
+offset_right = 680.0
+offset_bottom = 537.0
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room5/Triangle" unique_id=232929214]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("17_8wlue")
+
+[node name="Square" type="Button" parent="Room5" unique_id=1429782155]
+z_index = 2
+layout_mode = 0
+offset_left = 379.0
+offset_top = 422.0
+offset_right = 449.0
+offset_bottom = 492.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="no_reveal" type="TextureRect" parent="Room5/Square" unique_id=87058244]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("18_38xxe")
+
+[node name="reveal" type="TextureRect" parent="Room5/Square" unique_id=77276067]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("22_twiwv")
+
+[node name="Room6" parent="." unique_id=267208149 node_paths=PackedStringArray("pieces") instance=ExtResource("2_3ahv2")]
+visible = false
+layout_mode = 1
+pieces = [NodePath("Rune_H"), NodePath("Rune_K"), NodePath("Rune_E"), NodePath("Rune_C"), NodePath("Rune_B"), NodePath("Rune_A"), NodePath("Rune_I"), NodePath("Rune_F"), NodePath("Rune_L"), NodePath("Rune_D"), NodePath("Rune_G"), NodePath("Rune_J")]
+keys = Array[Vector2]([Vector2(287, 437), Vector2(280, 352), Vector2(280, 264), Vector2(332, 183), Vector2(398, 180), Vector2(458, 169), Vector2(521, 172), Vector2(582, 167), Vector2(639, 168), Vector2(653, 244), Vector2(669, 345), Vector2(681, 441)])
+
+[node name="Map6" type="Sprite2D" parent="Room6" unique_id=201310566]
+position = Vector2(766, 86.99998)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("23_k3e2r")
+
+[node name="Rune_H" type="Button" parent="Room6" unique_id=1562648093]
+z_index = 2
+layout_mode = 0
+offset_left = 197.0
+offset_top = 512.0
+offset_right = 252.0
+offset_bottom = 567.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_H" unique_id=8179340]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("23_upt55")
+
+[node name="Rune_K" type="Button" parent="Room6" unique_id=686818799]
+z_index = 2
+layout_mode = 0
+offset_left = 312.0
+offset_top = 518.0
+offset_right = 367.0
+offset_bottom = 573.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_K" unique_id=530937410]
+layout_mode = 0
+offset_right = 767.0
+offset_bottom = 776.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("24_ajqfe")
+
+[node name="Rune_E" type="Button" parent="Room6" unique_id=164792191]
+z_index = 2
+layout_mode = 0
+offset_left = 413.0
+offset_top = 514.0
+offset_right = 468.0
+offset_bottom = 569.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_E" unique_id=261584919]
+layout_mode = 0
+offset_right = 767.0
+offset_bottom = 776.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("26_y0muh")
+
+[node name="Rune_C" type="Button" parent="Room6" unique_id=191836526]
+z_index = 2
+layout_mode = 0
+offset_left = 496.0
+offset_top = 521.0
+offset_right = 551.0
+offset_bottom = 576.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_C" unique_id=818306091]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("26_lpqyh")
+
+[node name="Rune_B" type="Button" parent="Room6" unique_id=619508266]
+z_index = 2
+layout_mode = 0
+offset_left = 600.0
+offset_top = 515.0
+offset_right = 655.0
+offset_bottom = 570.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_B" unique_id=870909484]
+layout_mode = 0
+offset_right = 767.0
+offset_bottom = 776.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("28_35y2i")
+
+[node name="Rune_A" type="Button" parent="Room6" unique_id=1045222428]
+z_index = 2
+layout_mode = 0
+offset_left = 685.0
+offset_top = 514.0
+offset_right = 740.0
+offset_bottom = 569.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_A" unique_id=712710495]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_0wo5a")
+
+[node name="Rune_I" type="Button" parent="Room6" unique_id=836760225]
+z_index = 2
+layout_mode = 0
+offset_left = 772.0
+offset_top = 510.0
+offset_right = 827.0
+offset_bottom = 565.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_I" unique_id=21140040]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("30_oh1qg")
+
+[node name="Rune_F" type="Button" parent="Room6" unique_id=285603393]
+z_index = 2
+layout_mode = 0
+offset_left = 853.0
+offset_top = 512.0
+offset_right = 908.0
+offset_bottom = 567.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_F" unique_id=925844454]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("31_57l5b")
+
+[node name="Rune_L" type="Button" parent="Room6" unique_id=914083411]
+z_index = 2
+layout_mode = 0
+offset_left = 856.0
+offset_top = 418.0
+offset_right = 911.0
+offset_bottom = 473.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_L" unique_id=1251432517]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("32_mhqu7")
+
+[node name="Rune_D" type="Button" parent="Room6" unique_id=1970942558]
+z_index = 2
+layout_mode = 0
+offset_left = 864.0
+offset_top = 331.0
+offset_right = 919.0
+offset_bottom = 386.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_D" unique_id=140107595]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("33_14brf")
+
+[node name="Rune_G" type="Button" parent="Room6" unique_id=1025287944]
+z_index = 2
+layout_mode = 0
+offset_left = 856.0
+offset_top = 242.0
+offset_right = 911.0
+offset_bottom = 297.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_G" unique_id=1522023119]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("34_cwym3")
+
+[node name="Rune_J" type="Button" parent="Room6" unique_id=1673213565]
+z_index = 2
+layout_mode = 0
+offset_left = 853.0
+offset_top = 132.0
+offset_right = 908.0
+offset_bottom = 187.0
+flat = true
+script = ExtResource("5_3ahv2")
+metadata/_custom_type_script = "uid://dq8d15t07mjj"
+
+[node name="TextureRect" type="TextureRect" parent="Room6/Rune_J" unique_id=1909469377]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("35_mhkcb")
+
+[node name="EndRoom" type="Control" parent="." unique_id=1965107105]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EcranFin" type="Sprite2D" parent="EndRoom" unique_id=1083285722]
+position = Vector2(556, 224)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("24_upt55")

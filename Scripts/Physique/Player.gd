@@ -8,6 +8,8 @@ var button : PhysiqueButton = null
 
 var interacting := false
 @onready var animationManager : AnimationManager = $Body
+@onready var stepsSound : AudioStreamPlayer2D = $stepsSound
+@onready var timer : Timer = $stepsSound/stepSoundDelay
 
 func _physics_process(delta: float) -> void:
 
@@ -43,3 +45,15 @@ func _on_zone_detection_body_exited (body : Node2D):
 
 func StopInteract() -> void:
 	interacting = false
+
+
+func _process(_delta: float) -> void:
+	if Input.is_physical_key_pressed(KEY_RIGHT) || Input.is_physical_key_pressed(KEY_LEFT) || Input.is_physical_key_pressed(KEY_UP) || Input.is_physical_key_pressed(KEY_DOWN) || Input.is_physical_key_pressed(KEY_D) || Input.is_physical_key_pressed(KEY_Q) || Input.is_physical_key_pressed(KEY_Z) || Input.is_physical_key_pressed(KEY_S):
+		if timer.is_stopped():
+			timer.start(0.5)
+	else:
+		timer.stop()
+
+
+func _on_step_sound_delay_timeout() -> void:
+	stepsSound.play()

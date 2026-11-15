@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ce7x5lb6st5nt"]
+
+[ext_resource type="Script" uid="uid://b8mtc8cecnmca" path="res://Scripts/Physique/caillou.gd" id="1_3s1ud"]
+[ext_resource type="Texture2D" uid="uid://hjltqpd7olgc" path="res://Assets/icon.svg" id="2_ejmak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(126, 126)
+
+[node name="Caillou" type="Node2D" unique_id=1879791748]
+script = ExtResource("1_3s1ud")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=346271527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1098659230]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1906148920]
+texture = ExtResource("2_ejmak")

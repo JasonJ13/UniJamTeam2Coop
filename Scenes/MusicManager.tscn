@@ -11,6 +11,7 @@ metadata/_custom_type_script = "uid://dr13q3q8l6ffl"
 
 [node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=2118119913]
 stream = ExtResource("2_vdm7c")
+autoplay = true
 
 [node name="MusicEsprit" type="AudioStreamPlayer" parent="." unique_id=1285775420]
 stream = ExtResource("3_ejwfi")

@@ -1,18 +1,11 @@
 extends Node
 class_name MusicManager
 
+@export var musicDict : Dictionary[String, AudioStreamPlayer]
 
-func PlayMenu() :
-	$MusicMenu.play()
-	$MusicEsprit.stop()
-	$MusicPhysic.stop()
-
-func PlayEsprit() :
-	$MusicMenu.stop()
-	$MusicEsprit.play()
-	$MusicPhysic.stop()
-
-func PlayPhysic() :
-	$MusicMenu.stop()
-	$MusicEsprit.stop()
-	$MusicPhysic.play()
+func Play(music : String) -> void :
+	for key in musicDict.keys() :
+		if (music == key) :
+			musicDict[key].play()
+		else :
+			musicDict[key].stop()

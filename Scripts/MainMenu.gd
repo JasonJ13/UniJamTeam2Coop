@@ -5,6 +5,7 @@ signal physicPlay
 signal espritPlay
 signal quit
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Menu"):
 		quit.emit()

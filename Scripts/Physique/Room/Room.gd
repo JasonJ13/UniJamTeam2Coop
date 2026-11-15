@@ -8,9 +8,13 @@ signal retour
 signal sorti
 
 @export var showBase := true
-@onready var baseTiles : TileMapLayer = $Base
+var baseTiles : TileMapLayer
 
 func _ready() -> void:
+	
+	if has_node("Base") :
+		baseTiles = $Base
+	
 	if (showBase && baseTiles != null) :
 		baseTiles.show()
 

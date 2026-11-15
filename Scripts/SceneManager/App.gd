@@ -8,23 +8,31 @@ extends Node
 var gameSceneRessource = preload("res://Scenes/Physique/Game.tscn")
 var espritSceneRessource = preload("res://Scenes/Esprit/GameSpirit.tscn")
 
-var gamePhysic : Node2D
-var gameEsprit : Control
+var gamePhysic : GamePhysic
+var gameEsprit : GameSpirit
 
 func play_physical() :
-	musicManager.PlayPhysic()
+	musicManager.Play("Room1&2")
 	menu.hide()
 	gamePhysic = gameSceneRessource.instantiate()
+	
+	gamePhysic.play1.connect(PlayRoom1)
+	gamePhysic.play3.connect(PlayRoom3)
+	gamePhysic.play5.connect(PlayRoom5)
+	
 	add_child(gamePhysic)
 
 func play_spirit() : 
-	musicManager.PlayEsprit()
+	musicManager.Play("Esprit")
 	menu.hide()
 	gameEsprit = espritSceneRessource.instantiate()
+	
+	gameEsprit.creditPlay.connect(PlayMenu)
+	
 	add_child(gameEsprit)
 
 func back_menu() :
-	musicManager.PlayMenu()
+	musicManager.Play("Menu")
 	menu.hide()
 	main_menu.hide()
 	title_screen.show()
@@ -39,6 +47,7 @@ func go_to_main_menu():
 	main_menu.show()
 	main_menu.initialisation()
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Menu"):
 		if (gameEsprit != null) :
@@ -48,4 +57,15 @@ func _process(delta: float) -> void:
 		if (gamePhysic != null) :
 			gamePhysic.queue_free()
 			back_menu()
-		
+
+func PlayMenu() -> void :
+	musicManager.Play("Menu")
+
+func PlayRoom1() -> void :
+	musicManager.Play("Room1&2")
+
+func PlayRoom3() -> void :
+	musicManager.Play("Room3&4")
+
+func PlayRoom5() -> void :
+	musicManager.Play("Room5")

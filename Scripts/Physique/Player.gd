@@ -11,6 +11,10 @@ var interacting := false
 @onready var stepsSound : AudioStreamPlayer2D = $stepsSound
 @onready var timer : Timer = $stepsSound/stepSoundDelay
 
+func _ready() -> void:
+	ChangeVisibillity()
+	ChangeVisibillity(false)
+
 func _physics_process(delta: float) -> void:
 
 
@@ -48,7 +52,7 @@ func StopInteract() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_physical_key_pressed(KEY_RIGHT) || Input.is_physical_key_pressed(KEY_LEFT) || Input.is_physical_key_pressed(KEY_UP) || Input.is_physical_key_pressed(KEY_DOWN) || Input.is_physical_key_pressed(KEY_D) || Input.is_physical_key_pressed(KEY_Q) || Input.is_physical_key_pressed(KEY_Z) || Input.is_physical_key_pressed(KEY_S):
+	if Input.get_vector("Left", "Right", "Up", "Down") != Vector2.ZERO :
 		if timer.is_stopped():
 			timer.start(0.5)
 	else:
@@ -57,3 +61,17 @@ func _process(_delta: float) -> void:
 
 func _on_step_sound_delay_timeout() -> void:
 	stepsSound.play()
+
+
+var visi : int = 0
+
+func ChangeVisibillity(add : bool = true) :
+	if add :
+		visi +=1
+		if visi == 0 :
+			z_index = 6
+	else :
+		visi -= 1
+		if visi < 1 :
+			z_index = 0
+		

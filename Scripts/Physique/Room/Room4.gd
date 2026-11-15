@@ -38,6 +38,8 @@ func GetButton(id : int) -> void:
 	elif id == 5:
 		SwitchLights.emit()
 	else:
+		
 		index = 0
 		current_list = 0
-		print("echec")
+		if id == 3 || id == 1 :
+			GetButton(id)

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://r3ngush7wxm5"]
+[gd_scene format=4 uid="uid://r3ngush7wxm5"]
 
 [ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SupportRoom.gd" id="1_iclru"]
 [ext_resource type="Script" uid="uid://b7vkl2e5bfqpq" path="res://Scripts/Physique/Room/Room1.gd" id="1_rqtq1"]
@@ -27,7 +27,7 @@ scale = Vector2(7, 7)
 
 [node name="Pillar" parent="." unique_id=1057907794 instance=ExtResource("2_lwdc6")]
 z_index = 2
-tile_map_data = PackedByteArray(0, 0, 6, 0, 255, 255, 0, 0, 1, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 6, 0, 1, 0, 0, 0, 1, 0, 6, 0, 0, 0, 6, 0, 2, 0, 0, 0, 1, 0, 7, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAGAP//AAABAAQAAAAGAAAAAAABAAUAAAAGAAEAAAABAAYAAAAGAAIAAAABAAcAAAACAAIAAAAGAAMAAAAHAAUAAAAHAAIAAAA=")
 
 [node name="door2" parent="." unique_id=514784894 instance=ExtResource("3_catfe")]
 position = Vector2(93, 380)

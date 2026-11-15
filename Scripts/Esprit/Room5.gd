@@ -16,6 +16,7 @@ func _ready() -> void:
 		placed.append(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	for i in range(len(keys)):
 		if pieces[i].is_placed():

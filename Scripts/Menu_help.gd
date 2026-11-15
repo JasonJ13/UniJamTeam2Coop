@@ -15,6 +15,7 @@ func Help():
 	menu_help.show()
 	on_help=true
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Title_screen") && visible && on_help:
 		on_help=false

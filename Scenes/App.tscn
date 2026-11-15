@@ -17,7 +17,14 @@ visible = false
 [node name="Selection" parent="." unique_id=540462596 instance=ExtResource("3_3anhv")]
 visible = false
 
-[node name="MusicManager" parent="." unique_id=741826234 instance=ExtResource("5_r41ji")]
+[node name="MusicManager" parent="." unique_id=741826234 node_paths=PackedStringArray("musicDict") instance=ExtResource("5_r41ji")]
+musicDict = {
+"Esprit": NodePath("MusicEsprit"),
+"Menu": NodePath("MusicMenu"),
+"Room1&2": NodePath("MusicRoom1&2"),
+"Room3&4": NodePath("MusicRoom3&4"),
+"Room5": NodePath("MusicRoom5")
+}
 
 [connection signal="signalmenu" from="Title screen" to="." method="go_to_main_menu"]
 [connection signal="play" from="MainMenu" to="." method="select_menu"]

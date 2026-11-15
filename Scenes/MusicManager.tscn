@@ -5,8 +5,15 @@
 [ext_resource type="AudioStream" uid="uid://2ay416blc2k6" path="res://Assets/Son/Music/puzzle.wav" id="3_ejwfi"]
 [ext_resource type="AudioStream" uid="uid://covhl4or4in6i" path="res://Assets/Son/Music/finale.wav" id="4_ybj6c"]
 
-[node name="MusicManager" type="Node" unique_id=381766644]
+[node name="MusicManager" type="Node" unique_id=381766644 node_paths=PackedStringArray("musicDict")]
 script = ExtResource("1_iysw5")
+musicDict = {
+"Esprit": NodePath("MusicEsprit"),
+"Menu": NodePath("MusicMenu"),
+"Room1&2": NodePath("MusicRoom1&2"),
+"Room3&4": NodePath("MusicRoom3&4"),
+"Room5": NodePath("MusicRoom5")
+}
 metadata/_custom_type_script = "uid://dr13q3q8l6ffl"
 
 [node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=2118119913]
@@ -17,4 +24,13 @@ autoplay = true
 stream = ExtResource("3_ejwfi")
 
 [node name="MusicPhysic" type="AudioStreamPlayer" parent="." unique_id=741036961]
+stream = ExtResource("4_ybj6c")
+
+[node name="MusicRoom1&2" type="AudioStreamPlayer" parent="." unique_id=1041583792]
+stream = ExtResource("3_ejwfi")
+
+[node name="MusicRoom3&4" type="AudioStreamPlayer" parent="." unique_id=1610729182]
+stream = ExtResource("2_vdm7c")
+
+[node name="MusicRoom5" type="AudioStreamPlayer" parent="." unique_id=955307805]
 stream = ExtResource("4_ybj6c")

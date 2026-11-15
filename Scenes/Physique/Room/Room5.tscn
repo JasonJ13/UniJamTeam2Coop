@@ -1,17 +1,14 @@
 [gd_scene format=4 uid="uid://cl6jxna131fy3"]
 
 [ext_resource type="Script" uid="uid://ggsw814bxs7h" path="res://Scripts/Physique/Room/room_5supp.gd" id="1_u61ha"]
-[ext_resource type="PackedScene" uid="uid://d3w2uuf2v2wod" path="res://Scenes/Physique/Room/Room.tscn" id="2_irb0r"]
 [ext_resource type="Texture2D" uid="uid://co4y1he1r2oxd" path="res://Assets/Physique/Circle_Symbol_Room_E.png" id="2_u61ha"]
 [ext_resource type="Texture2D" uid="uid://c5csdsa6hrloh" path="res://Assets/Physique/Triangle_Symbol_Room_E.png" id="3_1kgpu"]
-[ext_resource type="Script" uid="uid://b7vkl2e5bfqpq" path="res://Scripts/Physique/Room/Room1.gd" id="3_36hc5"]
 [ext_resource type="Texture2D" uid="uid://xr4406kbmft5" path="res://Assets/Physique/Rhombus_Symbol_Room_E.png" id="4_kho7d"]
-[ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Scenes/Physique/PhysiqueButton.tscn" id="4_u61ha"]
-[ext_resource type="Script" uid="uid://muly5r3qj768" path="res://Scenes/Physique/buttonDoor.gd" id="5_1kgpu"]
 [ext_resource type="Texture2D" uid="uid://bosuth5uvkqnm" path="res://Assets/Physique/Square_Symbol_Room_E.png" id="5_5637h"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="5_kho7d"]
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="6_kho7d"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="7_5637h"]
+[ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="9_irb0r"]
 
 [node name="Room5" type="Node2D" unique_id=784714343]
 script = ExtResource("1_u61ha")
@@ -55,17 +52,6 @@ position = Vector2(-25.250011, 6.500004)
 rotation = 3.1415927
 scale = Vector2(0.015, 0.015)
 side = "nord"
-
-[node name="Room" parent="." unique_id=1018444833 instance=ExtResource("2_irb0r")]
-script = ExtResource("3_36hc5")
-
-[node name="buttonDoor" parent="Room" unique_id=1878903987 instance=ExtResource("4_u61ha")]
-position = Vector2(1055, 379)
-script = ExtResource("5_1kgpu")
-
-[node name="door" parent="Room" unique_id=1118860039 instance=ExtResource("6_kho7d")]
-position = Vector2(1056.0001, 382)
-scale = Vector2(7, 7)
 
 [node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
 z_index = 2
@@ -115,4 +101,14 @@ z_index = 2
 position = Vector2(1189, 327)
 side = "est"
 
-[connection signal="pressed" from="Room/buttonDoor" to="Room" method="OpenDoor"]
+[node name="Room" type="Node2D" parent="." unique_id=1619369757 node_paths=PackedStringArray("entry", "middle")]
+script = ExtResource("9_irb0r")
+entry = NodePath("Entry")
+middle = NodePath("Middle")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
+
+[node name="Entry" type="Node2D" parent="Room" unique_id=1300614898]
+position = Vector2(564, 719)
+
+[node name="Middle" type="Node2D" parent="Room" unique_id=1779333418]
+position = Vector2(566, 349)

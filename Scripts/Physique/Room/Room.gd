@@ -7,7 +7,12 @@ class_name Room
 signal retour
 signal sorti
 
+@export var showBase := true
+@onready var baseTiles : TileMapLayer = $Base
 
+func _ready() -> void:
+	if (showBase) :
+		baseTiles.show()
 
 func _on_entree_body_entered(body: Node2D) -> void:
 	print("entrer")

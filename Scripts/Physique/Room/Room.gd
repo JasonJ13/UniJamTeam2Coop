@@ -7,8 +7,8 @@ class_name Room
 signal retour
 signal sorti
 
-@export var showBase := true
-@onready var baseTiles : TileMapLayer = $Base
+#@export var showBase := true
+#@onready var baseTiles : TileMapLayer = $Base
 
 func _ready() -> void:
 	if (showBase && baseTiles != null) :

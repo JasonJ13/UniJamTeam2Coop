@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cfgkn16w7qncv"]
+
+[ext_resource type="Script" uid="uid://dr13q3q8l6ffl" path="res://Scripts/MusicManager.gd" id="1_iysw5"]
+[ext_resource type="AudioStream" uid="uid://dbk8wdwm3j4fm" path="res://Assets/Son/Music/labyrinthe.wav" id="2_vdm7c"]
+[ext_resource type="AudioStream" uid="uid://2ay416blc2k6" path="res://Assets/Son/Music/puzzle.wav" id="3_ejwfi"]
+[ext_resource type="AudioStream" uid="uid://covhl4or4in6i" path="res://Assets/Son/Music/finale.wav" id="4_ybj6c"]
+
+[node name="MusicManager" type="Node" unique_id=381766644]
+script = ExtResource("1_iysw5")
+metadata/_custom_type_script = "uid://dr13q3q8l6ffl"
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=2118119913]
+stream = ExtResource("2_vdm7c")
+
+[node name="MusicEsprit" type="AudioStreamPlayer" parent="." unique_id=1285775420]
+stream = ExtResource("3_ejwfi")
+
+[node name="MusicPhysic" type="AudioStreamPlayer" parent="." unique_id=741036961]
+stream = ExtResource("4_ybj6c")

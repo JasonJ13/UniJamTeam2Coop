@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://k38naj02oiug"]
+
+[ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SupportRoom.gd" id="1_4mt3s"]
+[ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="2_q7o6e"]
+[ext_resource type="PackedScene" uid="uid://d3w2uuf2v2wod" path="res://Scenes/Physique/Room/Room.tscn" id="3_ggwc3"]
+[ext_resource type="Script" uid="uid://b7vkl2e5bfqpq" path="res://Scripts/Physique/Room/Room1.gd" id="4_57gfg"]
+[ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Scenes/Physique/PhysiqueButton.tscn" id="5_8eove"]
+[ext_resource type="Script" uid="uid://muly5r3qj768" path="res://Scenes/Physique/buttonDoor.gd" id="6_5onpo"]
+[ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="7_f1ewf"]
+
+[node name="Room4" type="Node2D" unique_id=784714343]
+script = ExtResource("1_4mt3s")
+metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="TileMapLayer2" parent="." unique_id=1083123632 instance=ExtResource("2_q7o6e")]
+tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAAEAAUAAAABAAAAAAAAAAUAAAAIAAAAAAAAAAMAAAAFAAQAAAAAAAQAAAAFAAUAAAABAAQAAAABAAAAAAABAAMAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAADAAEAAAABAAEAAAAHAAEAAAADAAEAAAAHAAEAAAACAAEAAAAGAAEAAAAEAAEAAAAGAAEAAAAFAAIAAAAEAAIAAAAFAAEAAAACAAMAAAAFAAMAAAAFAAIAAAAFAAQAAAAEAAIAAAAFAAUAAAAJAAIAAAAEAAAAAAAGAAAAAAAFAAAAAAACAAIAAAACAAAAAAAGAAAAAAADAAAAAAAHAAAAAAABAAAAAAAHAAAAAAAAAAAAAAADAAAAAAA=")
+
+[node name="decor" parent="." unique_id=1057907794 instance=ExtResource("2_q7o6e")]
+tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAA=")
+
+[node name="Room" parent="." unique_id=1018444833 instance=ExtResource("3_ggwc3")]
+script = ExtResource("4_57gfg")
+
+[node name="buttonDoor" parent="Room" unique_id=1878903987 instance=ExtResource("5_8eove")]
+position = Vector2(989, 373)
+script = ExtResource("6_5onpo")
+
+[node name="door" parent="Room" unique_id=1118860039 instance=ExtResource("7_f1ewf")]
+position = Vector2(990.0001, 376)
+scale = Vector2(7, 7)
+
+[connection signal="pressed" from="Room/buttonDoor" to="Room" method="OpenDoor"]

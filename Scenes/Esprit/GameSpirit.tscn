@@ -329,6 +329,7 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("22_twiwv")
 
 [node name="Room6" parent="." unique_id=267208149 node_paths=PackedStringArray("pieces") instance=ExtResource("2_3ahv2")]
+visible = false
 layout_mode = 1
 pieces = [NodePath("Rune_H"), NodePath("Rune_K"), NodePath("Rune_E"), NodePath("Rune_C"), NodePath("Rune_B"), NodePath("Rune_A"), NodePath("Rune_I"), NodePath("Rune_F"), NodePath("Rune_L"), NodePath("Rune_D"), NodePath("Rune_G"), NodePath("Rune_J")]
 keys = Array[Vector2]([Vector2(287, 437), Vector2(280, 352), Vector2(280, 264), Vector2(332, 183), Vector2(398, 180), Vector2(458, 169), Vector2(521, 172), Vector2(582, 167), Vector2(639, 168), Vector2(653, 244), Vector2(669, 345), Vector2(681, 441)])

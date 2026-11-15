@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dt8f8pj1hob2p" path="res://Scripts/Menu_help.gd" id="1_dyg5w"]
 [ext_resource type="Texture2D" uid="uid://qw425blfhla" path="res://Assets/Main_menu/Main_Menu.png" id="2_0mrwn"]
+[ext_resource type="Texture2D" uid="uid://k7rar7itvo7g" path="res://Assets/Main_menu/Menu_help.png" id="3_tjbo5"]
 
 [node name="Menu_help" type="Control" unique_id=1953707774]
 layout_mode = 3
@@ -33,4 +34,11 @@ offset_right = 594.0
 offset_bottom = 539.0
 flat = true
 
+[node name="MenuHelp" type="Sprite2D" parent="." unique_id=316082799]
+visible = false
+position = Vector2(593, 360)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_tjbo5")
+
 [connection signal="pressed" from="Jouer" to="." method="jouer"]
+[connection signal="pressed" from="Help" to="." method="Help"]

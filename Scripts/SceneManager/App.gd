@@ -37,6 +37,7 @@ func select_menu():
 func go_to_main_menu():
 	title_screen.hide()
 	main_menu.show()
+	main_menu.initialisation()
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Menu"):

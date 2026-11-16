@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="8_nmxnj"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="8_s1xa5"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="9_nmxnj"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="11_yqp4w"]
 
 [node name="Room2" type="Node2D" unique_id=1518577394]
 script = ExtResource("1_1q34m")
@@ -60,6 +61,9 @@ side = "ouest"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=961346946]
 color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1663394837]
+stream = ExtResource("11_yqp4w")
 
 [connection signal="pressed" from="Room/PhysiqueButton" to="Room" method="GetButton"]
 [connection signal="timeout" from="Room/PhysiqueButton/Timer" to="Room/PhysiqueButton" method="_on_timeout"]

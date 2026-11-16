@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="4_uce60"]
 [ext_resource type="Texture2D" uid="uid://co4y1he1r2oxd" path="res://Assets/Physique/Circle_Symbol_Room_E.png" id="5_biw8g"]
 [ext_resource type="Texture2D" uid="uid://c5csdsa6hrloh" path="res://Assets/Physique/Triangle_Symbol_Room_E.png" id="6_1fssg"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="10_k2mkf"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="14_lae7w"]
 [ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="21_bjql1"]
 
@@ -137,6 +138,9 @@ position = Vector2(957, 194)
 
 [node name="Pillar4" parent="." unique_id=2049904826 instance=ExtResource("21_bjql1")]
 position = Vector2(193, 196)
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1258893017]
+stream = ExtResource("10_k2mkf")
 
 [connection signal="body_entered" from="Room/Entre" to="Room" method="_on_entree_body_entered"]
 [connection signal="EndGame" from="Room/Pitfall" to="." method="_on_pitfall_end_game"]

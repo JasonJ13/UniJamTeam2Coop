@@ -8,61 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Scenes/Physique/Torche.tscn" id="5_kho7d"]
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Scenes/Physique/Door.tscn" id="6_kho7d"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Scenes/Physique/Room/TileMap.tscn" id="7_5637h"]
-[ext_resource type="Texture2D" uid="uid://cfij16ahgq5m1" path="res://Assets/Esprit/Rune/Rune_A.png" id="7_gf27g"]
-[ext_resource type="Texture2D" uid="uid://vgehkhlwnddj" path="res://Assets/Esprit/Rune/Rune_B.png" id="8_cck7l"]
-[ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Scenes/Physique/Room/Pillar.tscn" id="8_webx4"]
 [ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="9_irb0r"]
-[ext_resource type="Texture2D" uid="uid://b2lads5ndabfr" path="res://Assets/Esprit/Rune/Rune_C.png" id="9_syenq"]
-[ext_resource type="Texture2D" uid="uid://dhnmuhiogroir" path="res://Assets/Esprit/Rune/Rune_D.png" id="10_oarfl"]
-[ext_resource type="Texture2D" uid="uid://dyipkadrywda1" path="res://Assets/Esprit/Rune/rune_E.png" id="11_omjku"]
-[ext_resource type="Texture2D" uid="uid://db4e1lj3adpjc" path="res://Assets/Esprit/Rune/Rune_F.png" id="12_6opfp"]
-[ext_resource type="Texture2D" uid="uid://b4twm0wq85wpw" path="res://Assets/Esprit/Rune/Rune_G.png" id="16_5kror"]
-[ext_resource type="Texture2D" uid="uid://dncrdlsc28t4t" path="res://Assets/Esprit/Rune/Rune_H.png" id="17_6ih2n"]
-[ext_resource type="Texture2D" uid="uid://crmsvebru7pek" path="res://Assets/Esprit/Rune/Rune_I.png" id="18_wmoph"]
-[ext_resource type="Texture2D" uid="uid://c3s7ue48bg6ey" path="res://Assets/Esprit/Rune/Rune_J.png" id="19_5k6gi"]
-[ext_resource type="Texture2D" uid="uid://hgo1vuaepuq8" path="res://Assets/Esprit/Rune/Rune_K.png" id="20_4dm5j"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irb0r"]
-size = Vector2(254, 100)
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/torch.wav" id="10_1kgpu"]
 
 [node name="Room5" type="Node2D" unique_id=784714343]
 script = ExtResource("1_u61ha")
 metadata/_custom_type_script = "uid://bp4qnkxbqalns"
-
-[node name="Room" type="Node2D" parent="." unique_id=1619369757 node_paths=PackedStringArray("entry", "middle")]
-script = ExtResource("9_irb0r")
-entry = NodePath("Entry")
-middle = NodePath("Middle")
-metadata/_custom_type_script = "uid://3ikvys6b1miu"
-
-[node name="Entry" type="Node2D" parent="Room" unique_id=1300614898]
-position = Vector2(577, 586)
-
-[node name="Middle" type="Node2D" parent="Room" unique_id=1779333418]
-position = Vector2(566, 349)
-
-[node name="Entre" type="Area2D" parent="Room" unique_id=1247633720]
-position = Vector2(439, 701)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Entre" unique_id=1918129313]
-position = Vector2(133, 17)
-shape = SubResource("RectangleShape2D_irb0r")
-
-[node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
-z_index = 2
-tile_map_data = PackedByteArray("AAAGAP//AAABAAAAAAAGAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAEAP//AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAABAAUAAAAAAAAAAAABAAMAAAAAAAAAAAABAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAUAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAEAAAABAAAAAAADAAIAAAABAAAAAAAEAAEAAAABAAAAAAAFAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAAFAAcAAAAFAAAAAAADAAcAAAAFAAIAAAA=")
-
-[node name="pillars" parent="." unique_id=1083123632 instance=ExtResource("7_5637h")]
-z_index = 2
-tile_map_data = PackedByteArray("AAABAP//AAABAAQAAAABAAAAAAABAAUAAAABAAEAAAABAAYAAAABAAIAAAABAAcAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAHAAEAAAABAAYAAAAHAAIAAAABAAcAAAADAAMAAAABAAQAAAADAAQAAAABAAUAAAADAAUAAAABAAYAAAADAAYAAAABAAcAAAAGAAQAAAABAAQAAAAGAAUAAAABAAUAAAAGAAYAAAABAAYAAAAGAAcAAAABAAcAAAAFAP//AAAEAAMAAAA=")
-
-[node name="door2" parent="." unique_id=514784894 instance=ExtResource("6_kho7d")]
-position = Vector2(93, 380)
-rotation = -3.1415925
-scale = Vector2(8, 8)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1638476059]
-color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 
 [node name="SymboleInLight" type="Node2D" parent="." unique_id=1571092785]
 z_index = 10
@@ -76,37 +27,6 @@ texture = ExtResource("2_u61ha")
 [node name="Sprite2D2" type="Sprite2D" parent="SymboleInLight" unique_id=2069079751]
 position = Vector2(144.125, 94.75)
 texture = ExtResource("3_1kgpu")
-
-[node name="Rune" type="Node2D" parent="SymboleInLight" unique_id=1757962648]
-z_index = 8
-position = Vector2(37.125, 100.125)
-scale = Vector2(0.01, 0.01)
-
-[node name="Node" type="Node" parent="SymboleInLight/Rune" unique_id=1031617796]
-
-[node name="RuneA" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=854219608]
-position = Vector2(334.99997, 1028.7499)
-texture = ExtResource("7_gf27g")
-
-[node name="RuneB" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=1219365192]
-position = Vector2(3612.5, -6150)
-texture = ExtResource("8_cck7l")
-
-[node name="RuneC" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=1345846226]
-position = Vector2(11650, -262.5)
-texture = ExtResource("9_syenq")
-
-[node name="RuneD" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=1687205946]
-position = Vector2(8337.5, -3837.5)
-texture = ExtResource("10_oarfl")
-
-[node name="RuneE" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=1263227810]
-position = Vector2(10087.5, 2250)
-texture = ExtResource("11_omjku")
-
-[node name="RuneF" type="Sprite2D" parent="SymboleInLight/Rune" unique_id=1556768915]
-position = Vector2(2075, -2600)
-texture = ExtResource("12_6opfp")
 
 [node name="SymboleInDark" type="Node2D" parent="." unique_id=1310331365]
 z_index = 10
@@ -123,36 +43,6 @@ position = Vector2(-15.125, 3.125)
 scale = Vector2(-0.015, -0.015)
 side = "nord"
 
-[node name="Torche2" parent="SymboleInDark/Sprite2D" unique_id=1880561641 instance=ExtResource("5_kho7d")]
-z_as_relative = false
-position = Vector2(1.8749981, -4.1249995)
-scale = Vector2(-0.015, -0.015)
-side = "nord"
-
-[node name="Torche3" parent="SymboleInDark/Sprite2D" unique_id=815138577 instance=ExtResource("5_kho7d")]
-z_as_relative = false
-position = Vector2(-1.7881393e-06, 9.625)
-scale = Vector2(-0.015, -0.015)
-side = "nord"
-
-[node name="Torche5" parent="SymboleInDark/Sprite2D" unique_id=404750287 instance=ExtResource("5_kho7d")]
-z_as_relative = false
-position = Vector2(-31.875002, -26)
-scale = Vector2(-0.015, -0.015)
-side = "nord"
-
-[node name="Torche7" parent="SymboleInDark/Sprite2D" unique_id=664029146 instance=ExtResource("5_kho7d")]
-z_as_relative = false
-position = Vector2(-61, -25.000002)
-scale = Vector2(-0.015, -0.015)
-side = "nord"
-
-[node name="Torche9" parent="SymboleInDark/Sprite2D" unique_id=2090254513 instance=ExtResource("5_kho7d")]
-z_as_relative = false
-position = Vector2(63.749992, -63)
-scale = Vector2(-0.015, -0.015)
-side = "nord"
-
 [node name="Sprite2D2" type="Sprite2D" parent="SymboleInDark" unique_id=1371151152]
 position = Vector2(162, 36.375)
 texture = ExtResource("5_5637h")
@@ -164,32 +54,21 @@ rotation = 3.1415927
 scale = Vector2(0.015, 0.015)
 side = "nord"
 
-[node name="Rune" type="Node2D" parent="SymboleInDark" unique_id=1199547296]
-z_index = 8
-position = Vector2(37.125, 100.125)
-scale = Vector2(0.01, 0.01)
+[node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
+z_index = 2
+tile_map_data = PackedByteArray("AAAGAP//AAABAAAAAAAGAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAEAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAP//AAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAEAAAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAAAAAAAAAABAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAAEAAcAAAABAAAAAAAFAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAYAAAABAAAAAAABAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAIAAAAAAAAAAAAEAP//AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAMAAAABAAAAAAD/////AAAFAAAAAAD///7/AAADAAEAAAAJAP//AAAFAAIAAAAJAP7/AAADAAMAAAAJAP3/AAADAAIAAAD///3/AAADAAAAAAAAAP7/AAAHAAEAAAACAP7/AAAHAAEAAAAEAP7/AAAHAAEAAAAGAP7/AAAHAAEAAAAIAP7/AAAHAAEAAAAAAP3/AAAHAAAAAAACAP3/AAAHAAAAAAAEAP3/AAAHAAAAAAAGAP3/AAAHAAAAAAAIAP3/AAAHAAAAAAABAP7/AAAGAAEAAAADAP7/AAAGAAEAAAAFAP7/AAAGAAEAAAAHAP7/AAAGAAEAAAABAP3/AAAGAAAAAAADAP3/AAAGAAAAAAAFAP3/AAAGAAAAAAAHAP3/AAAGAAAAAAAJAAEAAAAFAAIAAAD//wAAAAAEAAAAAAD//wIAAAAEAAAAAAD//wQAAAAEAAAAAAD//wYAAAAEAAAAAAD//wMAAAAFAAAAAAD//wUAAAAFAAAAAAD//wEAAAAFAAAAAAD//wcAAAAJAAAAAAAJAAcAAAAJAAIAAAAJAAUAAAAFAAIAAAAJAAMAAAAFAAIAAAAJAAAAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAYAAAAEAAIAAAABAAUAAAAAAAAAAAABAAMAAAAAAAAAAAABAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAUAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAACAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAEAAAABAAAAAAADAAIAAAABAAAAAAAEAAEAAAABAAAAAAAFAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAA=")
 
-[node name="Node" type="Node" parent="SymboleInDark/Rune" unique_id=1882210049]
+[node name="pillars" parent="." unique_id=1083123632 instance=ExtResource("7_5637h")]
+z_index = 2
+tile_map_data = PackedByteArray("AAABAP//AAABAAQAAAABAAAAAAABAAUAAAABAAEAAAABAAYAAAABAAIAAAABAAcAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAHAAEAAAABAAYAAAAHAAIAAAABAAcAAAADAAMAAAABAAQAAAADAAQAAAABAAUAAAADAAUAAAABAAYAAAADAAYAAAABAAcAAAAGAAQAAAABAAQAAAAGAAUAAAABAAUAAAAGAAYAAAABAAYAAAAGAAcAAAABAAcAAAA=")
 
-[node name="RuneG" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1909716469]
-position = Vector2(5112.5, -137.5)
-texture = ExtResource("16_5kror")
+[node name="door2" parent="." unique_id=514784894 instance=ExtResource("6_kho7d")]
+position = Vector2(93, 380)
+rotation = -3.1415925
+scale = Vector2(8, 8)
 
-[node name="RuneH" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=340479436]
-position = Vector2(11562.5, -7400)
-texture = ExtResource("17_6ih2n")
-
-[node name="RuneI" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=180973736]
-position = Vector2(1925, -3737.5)
-texture = ExtResource("18_wmoph")
-
-[node name="RuneJ" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1560080331]
-position = Vector2(5262.5, -1475)
-texture = ExtResource("19_5k6gi")
-
-[node name="RuneK" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1406477514]
-position = Vector2(-1125, -3700)
-texture = ExtResource("20_4dm5j")
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1638476059]
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 
 [node name="Torches" type="Node2D" parent="." unique_id=745089674]
 
@@ -223,16 +102,17 @@ z_index = 2
 position = Vector2(1189, 327)
 side = "est"
 
-[node name="Pillar" parent="." unique_id=1283371670 instance=ExtResource("8_webx4")]
-position = Vector2(450, 592)
+[node name="Room" type="Node2D" parent="." unique_id=1619369757 node_paths=PackedStringArray("entry", "middle")]
+script = ExtResource("9_irb0r")
+entry = NodePath("Entry")
+middle = NodePath("Middle")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
 
-[node name="Pillar2" parent="." unique_id=814333498 instance=ExtResource("8_webx4")]
-position = Vector2(835, 687)
+[node name="Entry" type="Node2D" parent="Room" unique_id=1300614898]
+position = Vector2(564, 719)
 
-[node name="Pillar3" parent="." unique_id=507864362 instance=ExtResource("8_webx4")]
-position = Vector2(957, 194)
+[node name="Middle" type="Node2D" parent="Room" unique_id=1779333418]
+position = Vector2(566, 349)
 
-[node name="Pillar4" parent="." unique_id=2049904826 instance=ExtResource("8_webx4")]
-position = Vector2(193, 196)
-
-[connection signal="body_entered" from="Room/Entre" to="Room" method="_on_entree_body_entered"]
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1468411359]
+stream = ExtResource("10_1kgpu")

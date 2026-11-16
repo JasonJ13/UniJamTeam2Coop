@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cvtvvhlfx6hdh"]
+
+[ext_resource type="Script" uid="uid://bx6igbkca51n7" path="res://Scripts/Physique/Object/Door.gd" id="1_ffl8k"]
+[ext_resource type="Texture2D" uid="uid://ce272n7t3w65d" path="res://Assets/Physique/Rooms/Porte.png" id="2_7t424"]
+[ext_resource type="AudioStream" uid="uid://dmf3p3hxqtlhi" path="res://Assets/Son/unlock.wav" id="3_0twrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csd5h"]
+size = Vector2(9, 13.125)
+
+[node name="Door" type="StaticBody2D" unique_id=1118860039]
+script = ExtResource("1_ffl8k")
+metadata/_custom_type_script = "uid://bx6igbkca51n7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1310924822]
+shape = SubResource("RectangleShape2D_csd5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802742661]
+texture_filter = 1
+scale = Vector2(0.99752706, 1.008067)
+texture = ExtResource("2_7t424")
+
+[node name="doorOpens" type="AudioStreamPlayer2D" parent="." unique_id=1763248189]
+stream = ExtResource("3_0twrk")
+volume_db = 18.0
+
+[connection signal="visibility_changed" from="doorOpens" to="." method="_on_door_opens_visibility_changed"]

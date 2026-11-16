@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwe1trpw8qn4k"]
+
+[ext_resource type="Script" uid="uid://cyrtty2y7h44h" path="res://Scripts/Menu/MainMenu.gd" id="1_a2ivp"]
+[ext_resource type="PackedScene" uid="uid://b3mdwsvx3tg1f" path="res://Menu/Selection.tscn" id="2_mj0i0"]
+
+[node name="MainMenu" type="Control" unique_id=540462596]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2ivp")
+
+[node name="Selection" parent="." unique_id=85010235 instance=ExtResource("2_mj0i0")]
+layout_mode = 1
+
+[connection signal="espritChoose" from="Selection" to="." method="_on_selection_esprit_choose"]
+[connection signal="physiqueChoose" from="Selection" to="." method="_on_selection_physique_choose"]

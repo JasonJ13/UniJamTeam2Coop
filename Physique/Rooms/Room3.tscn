@@ -1,0 +1,113 @@
+[gd_scene format=4 uid="uid://cu78rpeushco3"]
+
+[ext_resource type="Script" uid="uid://btced8ltlpkx8" path="res://Scripts/Physique/Room/SuppRoom/room_3supp.gd" id="1_gk0r5"]
+[ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="2_gk0r5"]
+[ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Physique/Rooms/TileMap.tscn" id="2_xr5d2"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Physique/Objects/Torche.tscn" id="5_0w3xs"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/Ambiance/torch.wav" id="6_mbsnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk0r5"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv2v0"]
+size = Vector2(100, 100)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g4v7s"]
+a = Vector2(738, -15)
+b = Vector2(-373, -7)
+
+[node name="Room3" type="Node2D" unique_id=784714343]
+script = ExtResource("1_gk0r5")
+DefaultLit = false
+metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="RoomFormat" parent="." unique_id=318836431 instance=ExtResource("2_xr5d2")]
+rotation = -0.003332435
+tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAACAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAABAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAABAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAAGAAEAAAABAAAAAAAHAAIAAAABAAAAAAAFAAIAAAABAAAAAAADAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAMAAAABAAAAAAAEAAMAAAABAAAAAAAGAAMAAAABAAAAAAAFAAQAAAABAAAAAAADAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAUAAAABAAAAAAAEAAUAAAABAAAAAAAGAAUAAAABAAAAAAAAAAIAAAAFAAAAAAAAAAEAAAAEAAAAAAAIAAEAAAAEAAIAAAAIAAIAAAAFAAIAAAAIAAMAAAAIAAQAAAAIAAQAAAAIAAUAAAABAAYAAAABAAAAAAADAAYAAAABAAAAAAAFAAYAAAABAAAAAAAHAAYAAAABAAAAAAACAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAAUAAAAEAAAAAAAIAAYAAAAFAAIAAAAIAAUAAAAEAAIAAAABAAAAAAAGAAEAAAADAAAAAAAGAAEAAAAFAAAAAAAGAAEAAAAHAAAAAAAGAAEAAAACAAAAAAAHAAEAAAAEAAAAAAAHAAEAAAAGAAAAAAAHAAEAAAAAAAMAAAAFAAQAAAAAAAQAAAAFAAUAAAAIAAAAAAACAAMAAAAIAP//AAACAAIAAAAHAP//AAAGAAAAAAAGAP//AAAHAAAAAAAEAP//AAAHAAAAAAACAP//AAAHAAAAAAAFAP//AAAGAAAAAAADAP//AAAGAAAAAAABAP//AAAGAAAAAAAAAP//AAACAAAAAAACAAcAAAABAAAAAAAEAAcAAAABAAAAAAAGAAcAAAABAAAAAAABAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAAAAcAAAAIAAAAAAAIAAcAAAAIAAIAAAAHAAQAAAABAAAAAAAHAAMAAAAAAAAAAAAAAAAAAAACAAEAAAA=")
+
+[node name="Room" type="Node2D" parent="." unique_id=1289292628 node_paths=PackedStringArray("entry", "exit", "middle")]
+script = ExtResource("2_gk0r5")
+entry = NodePath("Entry")
+exit = NodePath("Exit")
+middle = NodePath("Middle")
+showBase = false
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
+
+[node name="Middle" type="Node2D" parent="Room" unique_id=53885319 node_paths=PackedStringArray("middle")]
+position = Vector2(584, 423)
+script = ExtResource("2_gk0r5")
+middle = NodePath(".")
+metadata/_custom_type_script = "uid://3ikvys6b1miu"
+
+[node name="Entry" type="Node2D" parent="Room" unique_id=1398573501]
+position = Vector2(200, 380)
+
+[node name="Exit" type="Node2D" parent="Room" unique_id=1966091434]
+position = Vector2(977, 376)
+
+[node name="Entree" type="Area2D" parent="Room" unique_id=1241735178]
+position = Vector2(114, 370)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Entree" unique_id=273597558]
+position = Vector2(-77, 14)
+shape = SubResource("RectangleShape2D_gk0r5")
+
+[node name="Sortie" type="Area2D" parent="Room" unique_id=1585179213]
+position = Vector2(993, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Sortie" unique_id=463523769]
+position = Vector2(91, 17)
+shape = SubResource("RectangleShape2D_cv2v0")
+
+[node name="Symbol" parent="." unique_id=590698386 instance=ExtResource("2_xr5d2")]
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAgAAAAFAAYAAAADAAgAAAABAAcAAAADAAgAAAABAAEAAAACAAgAAAAHAAcAAAACAAgAAAACAAQAAAABAAgAAAAGAAMAAAABAAgAAAAEAAEAAAADAAgAAAA=")
+
+[node name="Wall" parent="." unique_id=1083123632 instance=ExtResource("2_xr5d2")]
+tile_map_data = PackedByteArray("AAABAAQAAAAFAAYAAAACAAQAAAAJAAYAAAAHAAUAAAAKAAYAAAAHAAYAAAAJAAYAAAAGAAUAAAAKAAYAAAAFAAYAAAAJAAYAAAAGAAYAAAAJAAYAAAAEAAYAAAAFAAgAAAADAAYAAAAFAAcAAAACAAYAAAAGAAgAAAAFAAUAAAAFAAgAAAAFAAQAAAAFAAYAAAAHAAIAAAAKAAYAAAAGAAIAAAAGAAYAAAAHAAEAAAAKAAYAAAACAAIAAAAJAAUAAAACAAMAAAAKAAYAAAACAAEAAAAFAAcAAAADAAEAAAAGAAYAAAAEAAEAAAAGAAYAAAABAAEAAAAJAAUAAAABAP//AAAKAAUAAAABAAAAAAAKAAUAAAAFAAEAAAAGAAYAAAAHAAMAAAAKAAYAAAAGAAQAAAAKAAYAAAADAAcAAAAKAAUAAAAEAAcAAAAKAAYAAAAEAAIAAAAGAAYAAAADAAIAAAAGAAYAAAAEAAMAAAAFAAgAAAACAAUAAAAFAAgAAAADAAUAAAAJAAYAAAADAAQAAAAKAAYAAAAEAAQAAAAKAAYAAAAEAAUAAAAKAAYAAAAHAAQAAAAKAAYAAAAFAAMAAAAJAAYAAAAFAAIAAAAKAAcAAAAGAAMAAAAKAAcAAAA=")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1439984021]
+color = Color(0, 0, 0, 1)
+
+[node name="Torches" type="Node2D" parent="." unique_id=888418493]
+position = Vector2(1, 0)
+
+[node name="Torche" parent="Torches" unique_id=1524118317 instance=ExtResource("5_0w3xs")]
+position = Vector2(99, 236)
+side = "ouest"
+
+[node name="Torche2" parent="Torches" unique_id=1120510261 instance=ExtResource("5_0w3xs")]
+position = Vector2(453, 258)
+side = "nord"
+
+[node name="Torche3" parent="Torches" unique_id=933451928 instance=ExtResource("5_0w3xs")]
+position = Vector2(586, 36)
+side = "nord"
+
+[node name="Torche4" parent="Torches" unique_id=1716227127 instance=ExtResource("5_0w3xs")]
+position = Vector2(711, 453)
+side = "nord"
+
+[node name="Torche5" parent="Torches" unique_id=854892930 instance=ExtResource("5_0w3xs")]
+position = Vector2(326, 635)
+side = "nord"
+
+[node name="Torche6" parent="Torches" unique_id=513274179 instance=ExtResource("5_0w3xs")]
+position = Vector2(1057, 228)
+side = "est"
+
+[node name="Torche7" parent="Torches" unique_id=1372118958 instance=ExtResource("5_0w3xs")]
+position = Vector2(1065, 513)
+side = "est"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=11348984]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=551761241]
+position = Vector2(417, 773)
+shape = SubResource("SegmentShape2D_g4v7s")
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1057926650]
+position = Vector2(1, 0)
+stream = ExtResource("6_mbsnw")
+
+[connection signal="body_entered" from="Room/Entree" to="Room" method="_on_entree_body_entered"]
+[connection signal="body_entered" from="Room/Sortie" to="Room" method="_on_sortie_body_entered"]

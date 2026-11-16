@@ -23,7 +23,9 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Assets/": "green",
-"res://Scenes/": "red",
+"res://Esprit/": "purple",
+"res://Menu/": "gray",
+"res://Physique/": "red",
 "res://Scripts/": "yellow"
 }
 

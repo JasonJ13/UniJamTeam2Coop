@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://df6fkvfojosd4"]
+
+[ext_resource type="Script" uid="uid://djpf74e6r58bs" path="res://Scripts/Physique/gamePhysic.gd" id="1_4ndsd"]
+[ext_resource type="PackedScene" uid="uid://r3ngush7wxm5" path="res://Physique/Rooms/Room1.tscn" id="2_xbb3c"]
+[ext_resource type="PackedScene" uid="uid://dw8m0xgaw6d8a" path="res://Physique/Rooms/Room2.tscn" id="3_5stio"]
+[ext_resource type="PackedScene" uid="uid://dyseuftnyspkx" path="res://Physique/Player/player.tscn" id="3_53bud"]
+[ext_resource type="PackedScene" uid="uid://cu78rpeushco3" path="res://Physique/Rooms/Room3.tscn" id="4_cao1l"]
+[ext_resource type="PackedScene" uid="uid://k38naj02oiug" path="res://Physique/Rooms/Room4.tscn" id="5_p88y0"]
+[ext_resource type="PackedScene" uid="uid://cl6jxna131fy3" path="res://Physique/Rooms/Room5.tscn" id="6_jgems"]
+
+[node name="Game" type="Node2D" unique_id=245525862 node_paths=PackedStringArray("rooms")]
+script = ExtResource("1_4ndsd")
+rooms = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("Room4"), NodePath("Room5")]
+metadata/_custom_type_script = "uid://djpf74e6r58bs"
+
+[node name="Room1" parent="." unique_id=744245850 instance=ExtResource("2_xbb3c")]
+
+[node name="Room2" parent="." unique_id=1518577394 instance=ExtResource("3_5stio")]
+position = Vector2(1384, -930)
+
+[node name="Room3" parent="." unique_id=1612407685 instance=ExtResource("4_cao1l")]
+position = Vector2(2493, 935)
+
+[node name="Room4" parent="." unique_id=784714343 instance=ExtResource("5_p88y0")]
+position = Vector2(4475, -1320)
+
+[node name="Room5" parent="." unique_id=1309308397 instance=ExtResource("6_jgems")]
+position = Vector2(5890, 820)
+DefaultLit = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1326329655]
+position = Vector2(583, 384)
+zoom = Vector2(0.673, 0.653)
+
+[node name="Player" parent="." unique_id=663629846 instance=ExtResource("3_53bud")]
+z_index = 6
+position = Vector2(362, 297)
+scale = Vector2(0.25, 0.25)
+
+[connection signal="SwitchLight" from="Room4" to="." method="switchLight"]

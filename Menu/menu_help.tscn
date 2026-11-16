@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d1yvbn3wb8x6g"]
+
+[ext_resource type="Script" uid="uid://dt8f8pj1hob2p" path="res://Scripts/Menu/Menu_help.gd" id="1_dyg5w"]
+[ext_resource type="Texture2D" uid="uid://qw425blfhla" path="res://Assets/Main_menu/Main_Menu.png" id="2_0mrwn"]
+[ext_resource type="Texture2D" uid="uid://k7rar7itvo7g" path="res://Assets/Main_menu/Menu_help.png" id="3_tjbo5"]
+
+[node name="Menu_help" type="Control" unique_id=1953707774]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dyg5w")
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=1820881887]
+position = Vector2(596, 360)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_0mrwn")
+
+[node name="Help" type="Button" parent="MainMenu" unique_id=18729641]
+offset_left = -110.0
+offset_top = 40.833313
+offset_right = 20.0
+offset_bottom = 170.83331
+flat = true
+
+[node name="Jouer" type="Button" parent="MainMenu" unique_id=1966535934]
+offset_left = -172.5
+offset_top = -129.16667
+offset_right = 107.5
+offset_bottom = -29.166672
+flat = true
+
+[node name="MenuHelp" type="Sprite2D" parent="." unique_id=316082799]
+visible = false
+position = Vector2(593, 360)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_tjbo5")
+
+[connection signal="pressed" from="MainMenu/Help" to="." method="Help"]
+[connection signal="pressed" from="MainMenu/Jouer" to="." method="jouer"]

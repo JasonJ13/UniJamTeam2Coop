@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cfgkn16w7qncv"]
+
+[ext_resource type="Script" uid="uid://dr13q3q8l6ffl" path="res://Scripts/Menu/MusicManager.gd" id="1_iysw5"]
+[ext_resource type="AudioStream" uid="uid://bcvw2l08v53ck" path="res://Assets/Son/Music/01-Queleton.wav" id="2_ybj6c"]
+[ext_resource type="AudioStream" uid="uid://tivl4kb26vka" path="res://Assets/Son/Music/05-Spirit.wav" id="3_qma2v"]
+[ext_resource type="AudioStream" uid="uid://dpl4lpss42806" path="res://Assets/Son/Music/02-Puzzle.wav" id="4_povxo"]
+[ext_resource type="AudioStream" uid="uid://crwl8dhrpqb65" path="res://Assets/Son/Music/03-Labyrinthe.wav" id="5_kgefd"]
+[ext_resource type="AudioStream" uid="uid://e2hn2b37lbdu" path="res://Assets/Son/Music/04-Finale.wav" id="6_kokqj"]
+
+[node name="MusicManager" type="Node" unique_id=381766644 node_paths=PackedStringArray("musicDict")]
+script = ExtResource("1_iysw5")
+musicDict = {
+"Esprit": NodePath("MusicEsprit"),
+"Menu": NodePath("MusicMenu"),
+"Room1&2": NodePath("MusicRoom1&2"),
+"Room3&4": NodePath("MusicRoom3&4"),
+"Room5": NodePath("MusicRoom5")
+}
+metadata/_custom_type_script = "uid://dr13q3q8l6ffl"
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=2118119913]
+stream = ExtResource("2_ybj6c")
+autoplay = true
+
+[node name="MusicEsprit" type="AudioStreamPlayer" parent="." unique_id=1285775420]
+stream = ExtResource("3_qma2v")
+
+[node name="MusicRoom1&2" type="AudioStreamPlayer" parent="." unique_id=1041583792]
+stream = ExtResource("4_povxo")
+
+[node name="MusicRoom3&4" type="AudioStreamPlayer" parent="." unique_id=1610729182]
+stream = ExtResource("5_kgefd")
+
+[node name="MusicRoom5" type="AudioStreamPlayer" parent="." unique_id=955307805]
+stream = ExtResource("6_kokqj")

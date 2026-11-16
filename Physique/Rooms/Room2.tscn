@@ -1,0 +1,69 @@
+[gd_scene format=4 uid="uid://dw8m0xgaw6d8a"]
+
+[ext_resource type="Script" uid="uid://bp4qnkxbqalns" path="res://Scripts/Physique/Room/SuppRoom/SupportRoom.gd" id="1_1q34m"]
+[ext_resource type="Script" uid="uid://cyv7wy02e5rrq" path="res://Scripts/Physique/Room/Room2.gd" id="2_1q34m"]
+[ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Physique/Objects/PhysiqueButton.tscn" id="6_1q34m"]
+[ext_resource type="PackedScene" uid="uid://d3w2uuf2v2wod" path="res://Physique/Rooms/Room.tscn" id="6_s1xa5"]
+[ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Physique/Objects/Door.tscn" id="6_x1sat"]
+[ext_resource type="Script" uid="uid://bem444tuqmrpl" path="res://Scripts/Physique/Object/Button/PhysiqueButtonRoom2.gd" id="7_x1sat"]
+[ext_resource type="PackedScene" uid="uid://c6giwdf6cqlbg" path="res://Physique/Objects/Pillar.tscn" id="8_nmxnj"]
+[ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Physique/Rooms/TileMap.tscn" id="8_s1xa5"]
+[ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Physique/Objects/Torche.tscn" id="9_nmxnj"]
+[ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/Ambiance/torch.wav" id="11_yqp4w"]
+
+[node name="Room2" type="Node2D" unique_id=1518577394]
+script = ExtResource("1_1q34m")
+metadata/_custom_type_script = "uid://bp4qnkxbqalns"
+
+[node name="Room" parent="." unique_id=1018444833 instance=ExtResource("6_s1xa5")]
+script = ExtResource("2_1q34m")
+defaultLit = true
+
+[node name="PhysiqueButton" parent="Room" unique_id=1878903987 instance=ExtResource("6_1q34m")]
+position = Vector2(1057, 250)
+script = ExtResource("7_x1sat")
+
+[node name="Timer" type="Timer" parent="Room/PhysiqueButton" unique_id=2043119959]
+one_shot = true
+
+[node name="Door" parent="Room" unique_id=1118860039 instance=ExtResource("6_x1sat")]
+position = Vector2(1052, 379.00003)
+scale = Vector2(7, 7)
+
+[node name="Pillar" parent="." unique_id=1083123632 instance=ExtResource("8_s1xa5")]
+z_index = 5
+tile_map_data = PackedByteArray("AAAFAAIAAAADAAQAAAAFAAMAAAADAAUAAAAFAAQAAAADAAYAAAAFAAUAAAADAAcAAAACAAEAAAAAAAQAAAACAAIAAAAAAAUAAAACAAMAAAAAAAYAAAACAAQAAAAAAAcAAAADAP//AAACAAQAAAADAAAAAAACAAUAAAADAAEAAAACAAYAAAADAAIAAAACAAcAAAAGAAEAAAALAAIAAAA=")
+
+[node name="Pillars" type="Node2D" parent="." unique_id=1217752023]
+
+[node name="StaticBody2D" parent="Pillars" unique_id=1283371670 instance=ExtResource("8_nmxnj")]
+position = Vector2(444, 199)
+
+[node name="StaticBody2D2" parent="Pillars" unique_id=100542411 instance=ExtResource("8_nmxnj")]
+position = Vector2(323, 396)
+
+[node name="Pillar" parent="Pillars" unique_id=554011806 instance=ExtResource("8_nmxnj")]
+position = Vector2(706, 494)
+
+[node name="Torches" type="Node2D" parent="." unique_id=2110739139]
+
+[node name="Torche" parent="Torches" unique_id=1524118317 instance=ExtResource("9_nmxnj")]
+position = Vector2(446, 13)
+side = "nord"
+
+[node name="Torche2" parent="Torches" unique_id=2008601843 instance=ExtResource("9_nmxnj")]
+position = Vector2(827, 562)
+side = "sud"
+
+[node name="Torche3" parent="Torches" unique_id=1143355776 instance=ExtResource("9_nmxnj")]
+position = Vector2(374, 278)
+side = "ouest"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=961346946]
+color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1663394837]
+stream = ExtResource("11_yqp4w")
+
+[connection signal="pressed" from="Room/PhysiqueButton" to="Room" method="GetButton"]
+[connection signal="timeout" from="Room/PhysiqueButton/Timer" to="Room/PhysiqueButton" method="_on_timeout"]

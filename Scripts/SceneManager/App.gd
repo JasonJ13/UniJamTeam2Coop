@@ -5,8 +5,8 @@ extends Node
 @onready var title_screen : Control = $"Title screen"
 @onready var musicManager : MusicManager = $MusicManager
 
-var gameSceneRessource = preload("res://Scenes/Physique/Game.tscn")
-var espritSceneRessource = preload("res://Scenes/Esprit/GameSpirit.tscn")
+var gameSceneRessource = preload("res://Physique/GamePhys.tscn")
+var espritSceneRessource = preload("res://Esprit/GameSpirit.tscn")
 
 var gamePhysic : GamePhysic
 var gameEsprit : GameSpirit

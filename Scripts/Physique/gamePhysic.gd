@@ -67,4 +67,5 @@ func switchLight() -> void:
 	isOnDefaultLit = !isOnDefaultLit
 
 func win() ->void :
-	quit.emit()
+	camera.position=$Node2D.position
+	player.hide()

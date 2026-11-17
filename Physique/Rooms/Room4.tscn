@@ -50,6 +50,10 @@ tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAQAAAAAAAA
 [node name="decor" parent="." unique_id=1057907794 instance=ExtResource("2_q7o6e")]
 tile_map_data = PackedByteArray("AAAEAAIAAAAGAAMAAAA=")
 
+[node name="symbols" parent="." unique_id=1548569432 instance=ExtResource("2_q7o6e")]
+position = Vector2(388, 408)
+tile_map_data = PackedByteArray("AAD+/wIAAAAAAAgAAAD//wIAAAABAAgAAAAAAAIAAAACAAgAAAABAAIAAAADAAgAAAA=")
+
 [node name="Room" type="Node2D" parent="." unique_id=874313627 node_paths=PackedStringArray("entry", "exit", "middle")]
 script = ExtResource("3_ymp55")
 entry = NodePath("Entry")
@@ -221,3 +225,4 @@ stream = ExtResource("10_8eove")
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton2" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton" to="Room" method="GetButton"]
 [connection signal="body_entered" from="Room/Entree" to="Room" method="_on_entree_body_entered"]
+[connection signal="body_entered" from="Room/Sortie" to="Room" method="_on_sortie_body_entered"]

@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="9_irb0r"]
 [ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/Ambiance/torch.wav" id="10_1kgpu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i131u"]
+size = Vector2(100, 100)
+
 [node name="Room5" type="Node2D" unique_id=784714343]
 script = ExtResource("1_u61ha")
 metadata/_custom_type_script = "uid://bp4qnkxbqalns"
@@ -116,3 +119,13 @@ position = Vector2(566, 349)
 
 [node name="torchSound" type="AudioStreamPlayer2D" parent="." unique_id=1468411359]
 stream = ExtResource("10_1kgpu")
+
+[node name="Entree" type="Area2D" parent="." unique_id=182483089]
+position = Vector2(114, 370)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entree" unique_id=1403666732]
+position = Vector2(465, 1090)
+scale = Vector2(14, 14)
+shape = SubResource("RectangleShape2D_i131u")
+
+[connection signal="body_entered" from="Entree" to="Room" method="_on_entree_body_entered"]

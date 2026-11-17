@@ -5,8 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://eq7c1uflbcm4" path="res://Physique/Objects/PhysiqueButton.tscn" id="3_vir5s"]
 [ext_resource type="Script" uid="uid://bl5siyutk5jfx" path="res://Scripts/Physique/Room/Room4.gd" id="3_ymp55"]
 [ext_resource type="Script" uid="uid://bdrd3cty2t8l6" path="res://Scripts/Physique/Object/hidden_door.gd" id="4_4mt3s"]
+[ext_resource type="Texture2D" uid="uid://c6s5qcif2we0a" path="res://Assets/Physique/Symbols/Gamma.png" id="4_ik3gy"]
 [ext_resource type="AudioStream" uid="uid://p1875ywnwl1x" path="res://Assets/Son/doorOpens.wav" id="4_nkpcj"]
 [ext_resource type="Script" uid="uid://e318xhbn48nh" path="res://Scripts/Physique/Object/Button/PhysiqueButtonRoom4.gd" id="4_thnoo"]
+[ext_resource type="Texture2D" uid="uid://cr00pftjeysue" path="res://Assets/Physique/Symbols/Beta.png" id="5_m5i24"]
+[ext_resource type="Texture2D" uid="uid://ju8j1k1g4puk" path="res://Assets/Physique/Symbols/Delta.png" id="6_0bft3"]
+[ext_resource type="Texture2D" uid="uid://cmlulmrnflth4" path="res://Assets/Physique/Symbols/Alpha.png" id="7_40ufa"]
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Physique/Objects/Torche.tscn" id="8_q7o6e"]
 [ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/Ambiance/torch.wav" id="10_8eove"]
 
@@ -51,6 +55,26 @@ script = ExtResource("3_ymp55")
 entry = NodePath("Entry")
 exit = NodePath("Exit")
 middle = NodePath("Center")
+
+[node name="Gamma" type="Sprite2D" parent="Room" unique_id=1883865603]
+position = Vector2(192.99998, 380.99997)
+scale = Vector2(7, 7)
+texture = ExtResource("4_ik3gy")
+
+[node name="Beta" type="Sprite2D" parent="Room" unique_id=229782354]
+position = Vector2(554.00006, 267)
+scale = Vector2(7, 7)
+texture = ExtResource("5_m5i24")
+
+[node name="Delta" type="Sprite2D" parent="Room" unique_id=836132650]
+position = Vector2(661, 382.0001)
+scale = Vector2(7, 7)
+texture = ExtResource("6_0bft3")
+
+[node name="Alpha" type="Sprite2D" parent="Room" unique_id=1657902921]
+position = Vector2(226.00002, 268)
+scale = Vector2(7, 7)
+texture = ExtResource("7_40ufa")
 
 [node name="Walls" type="Node2D" parent="Room" unique_id=568903148]
 

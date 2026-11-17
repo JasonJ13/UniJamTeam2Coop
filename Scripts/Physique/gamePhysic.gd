@@ -65,3 +65,6 @@ func CheckLightRoom() -> void :
 
 func switchLight() -> void:
 	isOnDefaultLit = !isOnDefaultLit
+
+func win() ->void :
+	quit.emit()

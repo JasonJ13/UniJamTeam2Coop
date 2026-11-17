@@ -38,3 +38,4 @@ position = Vector2(362, 297)
 scale = Vector2(0.25, 0.25)
 
 [connection signal="SwitchLight" from="Room4" to="." method="switchLight"]
+[connection signal="Win" from="Room4" to="." method="win"]

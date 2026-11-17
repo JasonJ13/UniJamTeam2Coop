@@ -219,6 +219,7 @@ side = "est"
 stream = ExtResource("10_8eove")
 
 [connection signal="SwitchLights" from="Room" to="." method="emitLight"]
+[connection signal="WinTheGame" from="Room" to="." method="win"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton5" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton4" to="Room" method="GetButton"]
 [connection signal="pressed" from="Room/Buttons/PhysiqueButton3" to="Room" method="GetButton"]

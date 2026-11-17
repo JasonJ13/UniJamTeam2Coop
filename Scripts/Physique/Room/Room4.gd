@@ -27,6 +27,8 @@ func GetButton(id : int) -> void:
 			door.play_sound_and_delete()
 			opened = true
 			index = 0
+	elif id == 5:
+		SwitchLights.emit()
 	elif id == answer_game[index] && (current_list == 0 || current_list == 2):
 		current_list = 2
 		index += 1
@@ -35,8 +37,6 @@ func GetButton(id : int) -> void:
 			#shake camera
 			await soundeffext.finished
 			WinTheGame.emit()
-	elif id == 5:
-		SwitchLights.emit()
 	else:
 		
 		index = 0

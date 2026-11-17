@@ -23,7 +23,6 @@ fill_from = Vector2(0.48185483, 0.5020161)
 fill_to = Vector2(0.7560484, 0.8810484)
 
 [node name="Player" type="CharacterBody2D" unique_id=663629846]
-z_index = 3
 script = ExtResource("1_1pxl2")
 metadata/_custom_type_script = "uid://croetm8tuqfjb"
 

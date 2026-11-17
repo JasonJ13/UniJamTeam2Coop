@@ -8,8 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://qxxew0mca61x" path="res://Physique/Objects/Torche.tscn" id="5_kho7d"]
 [ext_resource type="PackedScene" uid="uid://cvtvvhlfx6hdh" path="res://Physique/Objects/Door.tscn" id="6_kho7d"]
 [ext_resource type="PackedScene" uid="uid://udhu5q21v1mb" path="res://Physique/Rooms/TileMap.tscn" id="7_5637h"]
+[ext_resource type="Texture2D" uid="uid://cfij16ahgq5m1" path="res://Assets/Esprit/Rune/Rune_A.png" id="7_gf27g"]
+[ext_resource type="Texture2D" uid="uid://vgehkhlwnddj" path="res://Assets/Esprit/Rune/Rune_B.png" id="8_cck7l"]
 [ext_resource type="Script" uid="uid://3ikvys6b1miu" path="res://Scripts/Physique/Room/Room.gd" id="9_irb0r"]
+[ext_resource type="Texture2D" uid="uid://b2lads5ndabfr" path="res://Assets/Esprit/Rune/Rune_C.png" id="9_syenq"]
 [ext_resource type="AudioStream" uid="uid://br8d81wuw4jvu" path="res://Assets/Son/Ambiance/torch.wav" id="10_1kgpu"]
+[ext_resource type="Texture2D" uid="uid://dhnmuhiogroir" path="res://Assets/Esprit/Rune/Rune_D.png" id="10_oarfl"]
+[ext_resource type="Texture2D" uid="uid://dyipkadrywda1" path="res://Assets/Esprit/Rune/rune_E.png" id="11_omjku"]
+[ext_resource type="Texture2D" uid="uid://db4e1lj3adpjc" path="res://Assets/Esprit/Rune/Rune_F.png" id="12_6opfp"]
+[ext_resource type="Texture2D" uid="uid://b4twm0wq85wpw" path="res://Assets/Esprit/Rune/Rune_G.png" id="16_5kror"]
+[ext_resource type="Texture2D" uid="uid://dncrdlsc28t4t" path="res://Assets/Esprit/Rune/Rune_H.png" id="17_6ih2n"]
+[ext_resource type="Texture2D" uid="uid://crmsvebru7pek" path="res://Assets/Esprit/Rune/Rune_I.png" id="18_wmoph"]
+[ext_resource type="Texture2D" uid="uid://c3s7ue48bg6ey" path="res://Assets/Esprit/Rune/Rune_J.png" id="19_5k6gi"]
+[ext_resource type="Texture2D" uid="uid://hgo1vuaepuq8" path="res://Assets/Esprit/Rune/Rune_K.png" id="20_4dm5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i131u"]
 size = Vector2(100, 100)
@@ -23,6 +34,11 @@ z_index = 10
 position = Vector2(-139, -263)
 scale = Vector2(8, 8)
 
+[node name="RuneB" type="Sprite2D" parent="SymboleInLight" unique_id=1337281178]
+position = Vector2(73.625, 38.375)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("8_cck7l")
+
 [node name="Sprite2D" type="Sprite2D" parent="SymboleInLight" unique_id=1364633351]
 position = Vector2(60.375, 30.375)
 texture = ExtResource("2_u61ha")
@@ -30,6 +46,31 @@ texture = ExtResource("2_u61ha")
 [node name="Sprite2D2" type="Sprite2D" parent="SymboleInLight" unique_id=2069079751]
 position = Vector2(144.125, 94.75)
 texture = ExtResource("3_1kgpu")
+
+[node name="RuneD" type="Sprite2D" parent="SymboleInLight" unique_id=609525846]
+position = Vector2(121.5, 61.75)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("10_oarfl")
+
+[node name="RuneF" type="Sprite2D" parent="SymboleInLight" unique_id=173977427]
+position = Vector2(57, 74.375)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_6opfp")
+
+[node name="RuneA" type="Sprite2D" parent="SymboleInLight" unique_id=862008326]
+position = Vector2(41.375, 110.5)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("7_gf27g")
+
+[node name="RuneE" type="Sprite2D" parent="SymboleInLight" unique_id=124757481]
+position = Vector2(137.5, 122.25)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("11_omjku")
+
+[node name="RuneC" type="Sprite2D" parent="SymboleInLight" unique_id=981455023]
+position = Vector2(154, 98.375)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("9_syenq")
 
 [node name="SymboleInDark" type="Node2D" parent="." unique_id=1310331365]
 z_index = 10
@@ -40,9 +81,39 @@ scale = Vector2(8, 8)
 position = Vector2(88.125, 89)
 texture = ExtResource("4_kho7d")
 
-[node name="Torche" parent="SymboleInDark/Sprite2D" unique_id=1524118317 instance=ExtResource("5_kho7d")]
+[node name="Torche" parent="SymboleInDark/Sprite2D" unique_id=727982909 instance=ExtResource("5_kho7d")]
 z_as_relative = false
-position = Vector2(-15.125, 3.125)
+position = Vector2(-15.125006, 3.1250002)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Torche7" parent="SymboleInDark/Sprite2D" unique_id=1524118317 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(1.7499983, 9.125)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Torche3" parent="SymboleInDark/Sprite2D" unique_id=124844950 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(0.9999981, -2.8749995)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Torche2" parent="SymboleInDark/Sprite2D" unique_id=690969607 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(-31.500004, -27.124998)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Torche5" parent="SymboleInDark/Sprite2D" unique_id=837425763 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(-62.124996, -26.999998)
+scale = Vector2(-0.015, -0.015)
+side = "nord"
+
+[node name="Torche6" parent="SymboleInDark/Sprite2D" unique_id=28188298 instance=ExtResource("5_kho7d")]
+z_as_relative = false
+position = Vector2(66.24999, -62.375)
 scale = Vector2(-0.015, -0.015)
 side = "nord"
 
@@ -56,6 +127,33 @@ position = Vector2(-25.250011, 6.500004)
 rotation = 3.1415927
 scale = Vector2(0.015, 0.015)
 side = "nord"
+
+[node name="Rune" type="Node2D" parent="SymboleInDark" unique_id=1803518838]
+
+[node name="RuneJ" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1469633926]
+position = Vector2(89.25, 86.125)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("19_5k6gi")
+
+[node name="RuneG" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1803317218]
+position = Vector2(88.875, 98)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("16_5kror")
+
+[node name="RuneK" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1434274896]
+position = Vector2(25.75, 62.25)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("20_4dm5j")
+
+[node name="RuneI" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=2074525503]
+position = Vector2(57.125, 61.875)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("18_wmoph")
+
+[node name="RuneH" type="Sprite2D" parent="SymboleInDark/Rune" unique_id=1855074676]
+position = Vector2(154, 26.25)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("17_6ih2n")
 
 [node name="Ground" parent="." unique_id=1057907794 instance=ExtResource("7_5637h")]
 z_index = 2
